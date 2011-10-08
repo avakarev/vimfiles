@@ -573,8 +573,14 @@ map <leader>tt <Plug>TaskList
 
 nnoremap <leader>ty :YRShow<CR>
 let g:yankring_replace_n_nkey = ''
-let g:yankring_history_dir = '$HOME/.vim/local'
+let g:yankring_history_dir = $HOME . '/.vim/local'
 let g:yankring_max_history = 200
 let g:yankring_max_display = 200
 let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
+
+"                       [ MRU ]
+nnoremap <leader>m :MRU<CR>
+inoremap <leader>m <ESC>:MRU<CR>
+let MRU_File = $HOME.'/.vim/local/recent_files'
+let MRU_Max_Entries = 20
