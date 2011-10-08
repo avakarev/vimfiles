@@ -57,7 +57,7 @@ if (&t_Co >= 256) || has("gui_running") || ($TERM_PROGRAM == "iTerm.app") || ($C
 endif
 
 " Make cursor shape as line in insert mode and as block in other cases
-if $COLORTERM == "gnome-terminal" && has("autocmd")
+if !has("gui_running") && $COLORTERM == "gnome-terminal" && has("autocmd")
     " Should work in gnome-terminal >= 2.26
     autocmd InsertEnter          * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
     autocmd InsertLeave,VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
