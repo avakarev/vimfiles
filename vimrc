@@ -449,6 +449,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
     autocmd BufNewFile,BufReadPre {GNUMakefile,Makefile,makefile}{,.am,.in} setlocal noexpandtab
     autocmd BufNewFile,BufReadPre *.{py,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufReadPre *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
 augroup END
