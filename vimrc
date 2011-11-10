@@ -175,6 +175,8 @@ nnoremap <leader>tl :set invlist list?<CR>
 nnoremap <leader>th :set invhls hls?<CR>
 "  numbers
 nnoremap <leader>tn :set number!<Bar> set number?<CR>
+"  folding
+nnoremap <leader>tf :set foldenable!<Bar> set foldenable?<CR>
 "  spell
 nnoremap <leader>ts :set spell! <Bar> set spell?<CR>
 "  relative number
@@ -448,7 +450,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
     autocmd BufNewFile,BufReadPre {GNUMakefile,Makefile,makefile}{,.am,.in} setlocal noexpandtab
-    autocmd BufNewFile,BufReadPre *.{py,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufReadPre *.{py,rb,erb,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufReadPre *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
