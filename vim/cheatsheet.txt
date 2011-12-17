@@ -65,7 +65,7 @@ V           go to visual mode and operate in terms of lines
 " -------------- [Fuck you, Windows] --------------
 ^M in VIM can be manipulated as it is an \r character.
 Often times other developers would edit files under Windows and ^M characters would be inserted.
-It is quite easy get rid on them. There several method to reach the goal.
+It is quite easy get rid on them. There are several methods to reach the goal.
 1) :%s/^M//g " Be sure you make the ^M by using Ctrl+v + Ctrl+m, cause of unicode
 2) sed 's/^M//g' dirty.file > clean.file " See line above and use Ctrl+v + Ctrl+m
 3) dos2unix < tempfile > actualfile
@@ -77,3 +77,10 @@ It is quite easy get rid on them. There several method to reach the goal.
 :set                    List of all not-default settings
 :function               List of all non-built-in functions
 :map                    List of all mappings
+
+" ----------------- [Receipts] ----------------------
+:g//t$                  Copy lines that contain highlighted word into end of file.
+:g//d                   Delete lines that contain highlighted word.
+:g!//d                  Delete lines that DON'T contain highlighted word.
+:v/./,/./-j             Replace several empty line for a one.
+:'<,'>g/^$/d            Remove empty lines (in visual mode)
