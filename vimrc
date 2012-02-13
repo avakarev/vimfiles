@@ -239,7 +239,7 @@ set mousehide   " Hide mouse pointer when characters are typed
 set showmatch   " Show matching parentheses
 set matchtime=3 " Duration to show matching brace (1/10 sec)
 
-set wrap      " Wrap lines
+set nowrap      " Do not wrap lines
 set linebreak " Do not break words
 if has("linebreak")
     " String to put at the beginning of lines that have been wrapped: ↪
@@ -258,7 +258,7 @@ set report=0       " Show a report when something was changed. 0 means 'all'
 set foldcolumn=3      " 2 lines of column for fold showing, always
 set foldmethod=syntax " The kind of folding used for the current window
 set foldlevelstart=99 " Useful to always start editing with no folds closed
-set foldenable        " All folds will be closed by default (really not, see foldlevelstart above)
+set nofoldenable        " All folds will be closed by default (really not, see foldlevelstart above)
 
 " Spelling
 if filereadable(expand("~/.vim/spell/ru.utf-8.spl"))
@@ -445,12 +445,13 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *bash/* setlocal filetype=sh
     autocmd BufNewFile,BufRead *zsh/* setlocal filetype=zsh
     autocmd BufNewFile,BufRead *.tt2 setlocal filetype=tt2
+    autocmd BufNewFile,BufRead *.scss setlocal filetype=css
     autocmd BufNewFile,BufRead */nginx/* setlocal filetype=nginx
     autocmd BufNewFile,BufRead *tmux.conf* setlocal filetype=tmux
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
     autocmd BufNewFile,BufReadPre {GNUMakefile,Makefile,makefile}{,.am,.in} setlocal noexpandtab
-    autocmd BufNewFile,BufReadPre *.{py,rb,erb,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufReadPre *.{py,rb,erb,yml,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufReadPre *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
