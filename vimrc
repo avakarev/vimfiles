@@ -176,7 +176,17 @@ nnoremap <leader>th :set invhls hls?<CR>
 "  numbers
 nnoremap <leader>tn :set number!<Bar> set number?<CR>
 "  folding
-nnoremap <leader>tf :set foldenable!<Bar> set foldenable?<CR>
+nnoremap <leader>tf :call ToggleFolding()<CR>
+function! ToggleFolding()
+    set foldenable! foldenable?
+    " A column with the specified width is shown at the side
+    " of the window which indicates open and closed folds.
+    if &foldenable
+        set foldcolumn=3
+    else
+        set foldcolumn=0
+    endif
+endfunction
 "  spell
 nnoremap <leader>ts :set spell! <Bar> set spell?<CR>
 "  relative number
@@ -255,10 +265,9 @@ set winminheight=0 " Minimal height of a window, when it's not the current windo
 set cmdheight=1    " Number of screen lines to use for the command-line
 set report=0       " Show a report when something was changed. 0 means 'all'
 
-set foldcolumn=3      " 2 lines of column for fold showing, always
 set foldmethod=syntax " The kind of folding used for the current window
 set foldlevelstart=99 " Useful to always start editing with no folds closed
-set nofoldenable        " All folds will be closed by default (really not, see foldlevelstart above)
+set nofoldenable      " All folds will be closed by default (really not, see foldlevelstart above)
 
 " Spelling
 if filereadable(expand("~/.vim/spell/ru.utf-8.spl"))
