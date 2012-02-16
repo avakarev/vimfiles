@@ -85,3 +85,6 @@
 [submodule "vim/bundle/yankring"]
 	path = vim/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "vim/bundle/syntax-cucumber"]
+	path = vim/bundle/syntax-cucumber
+	url = git://github.com/tpope/vim-cucumber.git
