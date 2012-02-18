@@ -548,22 +548,19 @@ let NERDTreeMinimalUI  = 1  " Disables display of the 'Bookmarks' label and 'Pre
 let NERDTreeDirArrows  = 1  " Use arrows instead of + ~ chars when displaying directories
 let NERDTreeIgnore     = ['\.git','\.hg','\.svn','\.DS_Store','\.pyc']
 let NERDTreeShowHidden = 1
+let NERDTreeChDirMode  = 1  " Change vim's current working directory
+let NERDTreeMouseMode  = 2  " Single click will open directory nodes, and double click will - file nodes
+let NERDTreeBookmarksFile = $HOME . '/.vim/local/NERDTreeBookmarks' " This is where bookmarks are saved
 
 map <C-e> :NERDTreeToggle<CR> " Toggle NERDTree side pane
 map <C-x> :NERDTreeFind<CR>   " Find current file in NERDtree
 
-"autocmd VimEnter * NERDTree       " Auto-open NERDTree with vim
-"autocmd VimEnter * wincmd p       " Focus main window when vim opens with NERDTree
-"autocmd BufEnter * NERDTreeMirror " Auto-open NERDTree with new tab
-autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+" autocmd VimEnter * NERDTree       " Auto-open NERDTree with vim
+" autocmd VimEnter * wincmd p       " Focus main window when vim opens with NERDTree
+" autocmd BufEnter * NERDTreeMirror " Auto-open NERDTree with new tab
 
-" Close all open buffers on entering a window if the only
-" buffer that's left is the NERDTree buffer
-function! s:CloseIfOnlyNerdTreeLeft()
-    if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1 && winnr("$") == 1
-        q
-    endif
-endfunction
+" Close vim if the only window left open is a NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 
 "                   [ NERDCommenter ]
