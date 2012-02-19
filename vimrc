@@ -543,8 +543,8 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 "                      [ NERDTree ]
 
 let NERDTreeQuitOnOpen = 1  " Closes the tree window after opening a file
-let NERDTreeWinSize    = 45 " Sets the window size when the NERD tree is opened
-let NERDTreeMinimalUI  = 1  " Disables display of the 'Bookmarks' label and 'Press ? for help' text
+let NERDTreeWinSize    = 38 " Sets the window size when the NERD tree is opened
+let NERDTreeMinimalUI  = 1  " Disables the 'Bookmarks' label and 'Press ? for help' text
 let NERDTreeDirArrows  = 1  " Use arrows instead of + ~ chars when displaying directories
 let NERDTreeIgnore     = ['\.git','\.hg','\.svn','\.DS_Store','\.pyc']
 let NERDTreeShowHidden = 1
@@ -592,5 +592,5 @@ let g:yankring_window_height = 13
 "                       [ MRU ]
 nnoremap <leader>m :MRU<CR>
 inoremap <leader>m <ESC>:MRU<CR>
-let MRU_File = $HOME.'/.vim/local/recent_files'
+let MRU_File = $HOME.'/.vim/local/mru_recent_files'
 let MRU_Max_Entries = 20
