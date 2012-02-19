@@ -88,3 +88,9 @@
 [submodule "vim/bundle/syntax-cucumber"]
 	path = vim/bundle/syntax-cucumber
 	url = git://github.com/tpope/vim-cucumber.git
+[submodule "vim/bundle/colors-irblack"]
+	path = vim/bundle/colors-irblack
+	url = git://github.com/wgibbs/vim-irblack.git
+[submodule "vim/bundle/colors-molokai"]
+	path = vim/bundle/colors-molokai
+	url = git://github.com/vim-scripts/molokai.git
