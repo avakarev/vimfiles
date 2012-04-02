@@ -459,11 +459,11 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *tmux.conf* setlocal filetype=tmux
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
-    autocmd BufNewFile,BufReadPre {GNUMakefile,Makefile,makefile}{,.am,.in} setlocal noexpandtab
-    autocmd BufNewFile,BufReadPre *.{py,rb,erb,yml,yaml} setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd BufNewFile,BufReadPre *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
+    autocmd FileType make,automake setlocal noexpandtab softtabstop=0
+    autocmd FileType ruby,eruby,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 function s:SetColorScheme(name)
