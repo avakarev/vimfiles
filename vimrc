@@ -9,7 +9,7 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 filetype off
 
 " List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = ["pathogen","jslint","taglist"]
+let g:pathogen_disabled = ["pathogen","taglist", "syntastic"]
 call pathogen#infect()
 filetype plugin indent on
 
@@ -417,15 +417,13 @@ if has('windows')
 
     function! MyTabLine()
         let s = ''
+        let is_curr = 0
 
         for i in range(tabpagenr('$'))
-            if i + 1 == tabpagenr()
-                let s .= '%#TabLineSel#'
-            else
-                let s .= '%#TabLine#'
-            endif
-
+            let is_curr = (i + 1 == tabpagenr()) ? 1 : 0
+            let s .= is_curr ? '%#TabLineSel#' : '%#TabLine#'
             let s .= '%' . (i + 1) . 'T'
+            let s .= is_curr ? ' ~>' : ''
             let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
         endfor
 
@@ -459,11 +457,10 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *tmux.conf* setlocal filetype=tmux
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
-    autocmd BufNewFile,BufRead *.feature setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
-    autocmd FileType ruby,eruby,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType ruby,eruby,cucumber,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 function s:SetColorScheme(name)
