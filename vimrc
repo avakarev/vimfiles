@@ -289,10 +289,10 @@ map <leader>w <C-W>w
 autocmd VimResized * execute "normal! \<c-w>="
 
 " Resize windows
-nmap <C-Left> <C-W><<C-W><
-nmap <C-Right> <C-W>><C-W>>
-" nmap <C-Up> <C-W>+<C-W>+
-" nmap <C-Down> <C-W>-<C-W>-
+noremap <C-Left> <C-W><<C-W><
+noremap <C-Right> <C-W>><C-W>>
+noremap <C-Up> <C-W>+<C-W>+
+noremap <C-Down> <C-W>-<C-W>-
 
 " Display extra whitespace, toggle it with list!
 set list listchars=tab:»·,trail:·
