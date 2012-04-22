@@ -109,7 +109,7 @@ set nostartofline " Affects: CTRL-D, CTRL-U, CTRL-B, CTRL-F, G, H, M, L, gg
 
 set hidden         " When a buffer is brought to foreground, remember undo history and marks
 set ttimeoutlen=50 " The time in ms that is waited for a key code to complete
-set timeoutlen=500 " Lower the timeout after typing the leader key
+set timeoutlen=600 " The time in ms to wait after typing the leader key
 
 let mapleader = "," " Change the mapleader from \ to ,
 let g:mapleader = ","
