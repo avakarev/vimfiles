@@ -600,7 +600,9 @@ let g:yankring_max_display = 200
 let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
 
+
 "                       [ MRU ]
+
 nnoremap <leader>m :MRU<CR>
 inoremap <leader>m <ESC>:MRU<CR>
 let MRU_File = $HOME.'/.vim/local/mru_recent_files'
