@@ -124,14 +124,27 @@ nnoremap ; :
 set whichwrap+=h,l  " Make possible navigate between line in cursor on first/last position
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 
-" Indent/unindent lines
-nnoremap <silent> > >>
-nnoremap <silent> < <<
-vmap > >gv
-vmap < <gv
 
 " Find word under cursor recursively in current directory
 map <leader>ff :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+" Indent/unindent lines
+nnoremap <silent> > >>
+nnoremap <silent> < <<
+vnoremap > >gv
+vnoremap < <gv
+nmap <silent> <Left> <
+nmap <silent> <Right> >
+vmap <silent> <Left> <
+vmap <silent> <Right> >
+imap <silent> <Left> <C-D>
+imap <silent> <Right> <C-T>
+
+" Move strings among other ones
+nnoremap <Up> ddkP
+nnoremap <Down> ddp
+vnoremap <Up> xkP'[V']
+vnoremap <Down> xp'[V']
 
 " Tab for brackets
 nnoremap <Tab> %
