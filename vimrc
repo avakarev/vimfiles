@@ -149,10 +149,6 @@ nnoremap <Down> ddp
 vnoremap <Up> xkP'[V']
 vnoremap <Down> xp'[V']
 
-" Tab for brackets
-nnoremap <Tab> %
-vnoremap <Tab> %
-
 " Go to beginning/end of the line
 nnoremap <leader>h ^
 nnoremap <leader>l $
@@ -300,6 +296,8 @@ set splitbelow splitright " New window goes below (:sp) and right (:vs)
 
 " Fast window switching
 map <leader>w <C-W>w
+nnoremap <Tab> <C-W>w
+vnoremap <Tab> <C-W>w
 
 " Resize splits when the window is resized
 autocmd VimResized * execute "normal! \<c-w>="
