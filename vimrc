@@ -121,6 +121,9 @@ noremap <leader>. <PageUp>
 " Making it so ; works like : for commands
 nnoremap ; :
 
+" Opens the file in a new tab
+nnoremap gf <C-W>gf
+
 set whichwrap+=h,l  " Make possible navigate between line in cursor on first/last position
 set backspace=indent,eol,start " Allow backspacing over everything in insert mode
 
