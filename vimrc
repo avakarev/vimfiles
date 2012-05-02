@@ -24,12 +24,10 @@ syntax on " Enable syntax highlighting
 " To enable 256-color schemes, make sure that terminal supports 256 colors
 if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
     set t_Co=256         " Enable 256-color mode
-    colorscheme xoria256 " Set nice 256-color scheme
+    colorscheme xoria256+ " Set nice 256-color scheme
 else
     colorscheme default
 endif
-
-source ~/.vim/herovim/herovim.vim
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
