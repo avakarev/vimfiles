@@ -1,4 +1,5 @@
 *.swp
 .DS_Store
-yankring_history_v2.txt
+vim/local/yankring_history_v2.txt
+vim/local/mru_recent_files
 *.spl
