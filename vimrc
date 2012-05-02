@@ -607,3 +607,9 @@ nnoremap <leader>m :MRU<CR>
 inoremap <leader>m <ESC>:MRU<CR>
 let MRU_File = $HOME.'/.vim/local/mru_recent_files'
 let MRU_Max_Entries = 20
+
+
+"                       [ A ]
+
+let g:alternateExtensions_m = "h"
+let g:alternateExtensions_h = "m"
