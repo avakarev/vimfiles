@@ -577,6 +577,10 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "                   [ NERDCommenter ]
 
 let NERDSpaceDelims = 1 " Use a space after comment chars
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
+nmap <leader>c<space> <plug>NERDCommenterToggle
+vmap <leader>c<space> <plug>NERDCommenterToggle
 
 
 "                     [ Supertab ]
