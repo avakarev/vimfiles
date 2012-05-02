@@ -361,6 +361,7 @@ nnoremap N Nzzzv
 
 " Turn off search matches highlighting and clear any message displayed
 nnoremap <leader><Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <Space> :nohlsearch<Bar>:echo<CR><Space>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
