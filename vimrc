@@ -505,7 +505,8 @@ nnoremap _r :set filetype=ruby<CR>
 cmap w!! w !sudo tee % >/dev/null
 
 " Quickly edit/reload the vimrc file
-nnoremap <leader>ev <C-w><C-v><C-l>:edit $MYVIMRC<CR>
+nnoremap <leader>ev :tabedit $MYVIMRC<CR>
+" nnoremap <leader>ev <C-w><C-v><C-l>:edit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Set working directory to that of the current file
@@ -524,6 +525,7 @@ nnoremap <leader>st :retab!<CR>
 " Prints current file full path
 " TODO: use -nargs=? and some optional param to show "%:s" or "%:p"
 command! ShowPath :echo expand("%:p")
+nnoremap <leader>fi :ShowPath<CR>
 
 " Prints current file size
 command! ShowSize :echo s:FileSize()
@@ -553,11 +555,11 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 "                      [ NERDTree ]
 
 let NERDTreeQuitOnOpen = 1  " Closes the tree window after opening a file
-let NERDTreeWinSize    = 38 " Sets the window size when the NERD tree is opened
+let NERDTreeWinSize    = 38 " Sets the window size when the NERDTree is opened
 let NERDTreeMinimalUI  = 1  " Disables the 'Bookmarks' label and 'Press ? for help' text
 let NERDTreeDirArrows  = 1  " Use arrows instead of + ~ chars when displaying directories
 let NERDTreeIgnore     = ['\.git','\.hg','\.svn','\.DS_Store','\.pyc']
-let NERDTreeShowHidden = 1
+let NERDTreeShowHidden = 1  " Show hidden files in NERDTree by default
 let NERDTreeChDirMode  = 1  " Change vim's current working directory
 let NERDTreeMouseMode  = 2  " Single click will open directory nodes, and double click will - file nodes
 let NERDTreeBookmarksFile = $HOME . '/.vim/local/NERDTreeBookmarks' " This is where bookmarks are saved
