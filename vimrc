@@ -595,6 +595,13 @@ let g:SuperTabLongestHighlight = 1
 map <leader>tt <Plug>TaskList
 
 
+"                     [ Fugitive ]
+
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+
 "                     [ YankRing ]
 
 nnoremap <leader>ty :YRShow<CR>
