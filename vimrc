@@ -519,13 +519,13 @@ cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
 
 " Pull word under cursor into the replace formula
-nmap <leader>r :%s/<C-r>=expand("<cword>")<CR>/<C-r>=expand("<cword>")<CR>/gc
+nnoremap <leader>rr :%s/<C-r>=expand("<cword>")<CR>/<C-r>=expand("<cword>")<CR>/c
 
 " Strip all trailing whitespace in the current file
-nnoremap <leader>ss :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <leader>sw :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Retab the document (tabs to spaces)
-nnoremap <leader>st :retab!<CR>
+" Retab the document (convert tabs to spaces)
+nnoremap <leader>rt :retab!<CR>
 
 " Prints current file full path
 " TODO: use -nargs=? and some optional param to show "%:s" or "%:p"
