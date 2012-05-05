@@ -9,10 +9,18 @@ It will overwrite any existed ~/.vimrc, ~/.gvimrc and ~/.vim.
 ### Plugins: new functionality ###
 
 * [Fugitive](https://github.com/tpope/vim-fugitive) Awesome git wrapper.
+    * `<leader>gd` - Perform a |vimdiff| against the current file in the given revision
+    * `<leader>gs` - Bring up the output of git-status in the preview window
+    * `<leader>gb` - Run git-blame on the file and open the results in a scroll bound vertical split
 * [Matchit](https://github.com/vim-scripts/matchit.zip) Extended % matching for HTML, LaTeX, and many other languages.
 * [MRU](https://github.com/vim-scripts/mru.vim) Plugin to manage Most Recently Used (MRU) files.
+    * `<leader>m` - Displays the MRU file list in a temporary Vim window
 * [NERDCommenter](https://github.com/scrooloose/nerdcommenter) Intensely orgasmic commenting.
+    * `CTRL + /` - Toggles the comment state of the selected line(s)
+    * `<leader>c<space>` - Toggles the comment state of the selected line(s).
 * [NERDTree](https://github.com/scrooloose/nerdtree) A tree explorer plugin for vim.
+    * `CTRL + e` - Toggle NERDTree side pane
+    * `CTRL + x` - Find current file in NERDTree
 * [Pathogen](https://github.com/tpope/vim-pathogen) Manage your runtimepath.
 * [snipMate](https://github.com/msanders/snipmate.vim) Implements some of TextMate's snippets features in Vim.
 * [Supertab](https://github.com/ervandew/supertab) Perform all your vim insert mode completions with Tab.
@@ -20,8 +28,10 @@ It will overwrite any existed ~/.vimrc, ~/.gvimrc and ~/.vim.
 * [Syntastic](https://github.com/scrooloose/syntastic) Syntax checking hacks for vim.
 * [Taglist](https://github.com/vim-scripts/taglist.vim) Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc).
 * [Tasklist](https://github.com/vim-scripts/TaskList.vim) Eclipse like task list.
+    * `<leader>tl` - It will search the file for FIXME, TODO, and XXX and put them in a handy list
 * [Watchdog](https://github.com/avakarev/vim-watchdog) Comprehensive, dynamically resizing statusline.
 * [Yankring](https://github.com/vim-scripts/YankRing.vim) Maintains a history of previous yanks, changes and deletes.
+    * `<leader>yr` - Shows all entries in the yankring
 
 ### Plugins: syntax highlightings ###
 
