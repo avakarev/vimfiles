@@ -552,6 +552,31 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 "                        Plugins                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+"                     [ Fugitive ]
+
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gb :Gblame<CR>
+
+
+"                       [ MRU ]
+
+nnoremap <leader>m :MRU<CR>
+inoremap <leader>m <ESC>:MRU<CR>
+let MRU_File = $HOME.'/.vim/local/mru_recent_files'
+let MRU_Max_Entries = 20
+
+
+"                   [ NERDCommenter ]
+
+let NERDSpaceDelims = 1 " Use a space after comment chars
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle
+nmap <leader>c<space> <plug>NERDCommenterToggle
+vmap <leader>c<space> <plug>NERDCommenterToggle
+
+
 "                      [ NERDTree ]
 
 let NERDTreeQuitOnOpen = 1  " Closes the tree window after opening a file
@@ -565,7 +590,7 @@ let NERDTreeMouseMode  = 2  " Single click will open directory nodes, and double
 let NERDTreeBookmarksFile = $HOME . '/.vim/local/NERDTreeBookmarks' " This is where bookmarks are saved
 
 map <C-e> :NERDTreeToggle<CR> " Toggle NERDTree side pane
-map <C-x> :NERDTreeFind<CR>   " Find current file in NERDtree
+map <C-x> :NERDTreeFind<CR>   " Find current file in NERDTree
 
 " autocmd VimEnter * NERDTree       " Auto-open NERDTree with vim
 " autocmd VimEnter * wincmd p       " Focus main window when vim opens with NERDTree
@@ -573,15 +598,6 @@ map <C-x> :NERDTreeFind<CR>   " Find current file in NERDtree
 
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-
-"                   [ NERDCommenter ]
-
-let NERDSpaceDelims = 1 " Use a space after comment chars
-nmap <C-_> <plug>NERDCommenterToggle
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <leader>c<space> <plug>NERDCommenterToggle
-vmap <leader>c<space> <plug>NERDCommenterToggle
 
 
 "                     [ Supertab ]
@@ -592,33 +608,18 @@ let g:SuperTabLongestHighlight = 1
 
 "                     [ Tasklist ]
 
-map <leader>tt <Plug>TaskList
-
-
-"                     [ Fugitive ]
-
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>tl <Plug>TaskList
 
 
 "                     [ YankRing ]
 
-nnoremap <leader>ty :YRShow<CR>
+nnoremap <leader>yr :YRShow<CR>
 let g:yankring_replace_n_nkey = ''
 let g:yankring_history_dir = $HOME . '/.vim/local'
 let g:yankring_max_history = 200
 let g:yankring_max_display = 200
 let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
-
-
-"                       [ MRU ]
-
-nnoremap <leader>m :MRU<CR>
-inoremap <leader>m <ESC>:MRU<CR>
-let MRU_File = $HOME.'/.vim/local/mru_recent_files'
-let MRU_Max_Entries = 20
 
 
 "                       [ A ]
