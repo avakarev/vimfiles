@@ -23,7 +23,7 @@ syntax on " Enable syntax highlighting
 
 " To enable 256-color schemes, make sure that terminal supports 256 colors
 if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
-    set t_Co=256         " Enable 256-color mode
+    set t_Co=256          " Enable 256-color mode
     colorscheme xoria256+ " Set nice 256-color scheme
 else
     colorscheme default
@@ -285,6 +285,11 @@ if filereadable(expand("~/.vim/spell/ru.utf-8.spl"))
 else
     set spelllang=en
 endif
+
+set spellsuggest=best,10
+nnoremap <leader>ss z=
+nnoremap <leader>sn ]s
+nnoremap <leader>sp [s
 
 if &diff
    set nospell " If we're running in vimdiff, then disable spelling

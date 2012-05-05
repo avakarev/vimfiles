@@ -62,6 +62,13 @@ R           replace continuous characters
 v           go to visual mode and operate in terms of characters
 V           go to visual mode and operate in terms of lines
 
+" -------------- [Spelling] --------------
+]s          move to the next misspelled word
+[s          move to the previous misspelled word
+zg          add a word to the dictionary
+zug         undo the addition of a word to the dictionary
+z=          view spelling suggestions for a misspelled word
+
 " -------------- [Fuck you, Windows] --------------
 ^M in VIM can be manipulated as it is an \r character.
 Often times other developers would edit files under Windows and ^M characters would be inserted.
