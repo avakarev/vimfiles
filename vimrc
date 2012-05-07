@@ -481,14 +481,6 @@ augroup CustomFiletypes
     autocmd FileType ruby,eruby,cucumber,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
-function s:SetColorScheme(name)
-    highlight clear
-    if exists("syntax_on")
-        syntax reset
-    endif
-    exe "colorscheme " . a:name
-endfunction
-
 " Easy filetype switching
 nnoremap _m :set filetype=markdown<CR>
 nnoremap _l :set filetype=lua<CR>
