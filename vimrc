@@ -461,6 +461,18 @@ endif
 "                       Filetypes                          "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Try to detect filetype by interpreter directive
+function! DetectShellScript()
+    let interpreter_directive = getline(1)
+    if interpreter_directive =~ 'node'
+        setlocal filetype=javascript
+    elseif interpreter_directive =~ 'python'
+        setlocal filetype=python
+    elseif interpreter_directive =~ 'ruby'
+        setlocal filetype=ruby
+    endif
+endfunction
+
 " Set up custom filetype settings
 augroup CustomFiletypes
     autocmd!
@@ -479,6 +491,7 @@ augroup CustomFiletypes
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType ruby,eruby,cucumber,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType sh call DetectShellScript()
 augroup END
 
 " Easy filetype switching
