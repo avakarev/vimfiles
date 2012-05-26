@@ -524,7 +524,7 @@ cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
 
 " Pull word under cursor into the replace formula
-nnoremap <leader>rr :%s/<C-r>=expand("<cword>")<CR>/<C-r>=expand("<cword>")<CR>/c
+nnoremap <leader>rr :%s/<C-r>=expand("<cword>")<CR>/?/c
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>sw :%s/\s\+$//<CR>:let @/=''<CR>
@@ -618,7 +618,7 @@ let g:SuperTabLongestHighlight = 1
 
 "                     [ Tasklist ]
 
-nnoremap <leader>tl <Plug>TaskList
+map <leader>tt <Plug>TaskList
 
 
 "                     [ YankRing ]
