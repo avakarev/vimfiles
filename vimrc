@@ -249,6 +249,8 @@ set formatoptions-=b " Don't worry about vi compatiblity
 set formatoptions+=l " Don't break long lines in insert mode
 set formatoptions+=1 " Don't break lines after one-letter words, if possible
 
+set switchbuf+=usetab,newtab " quickfix window results will be opened in separate tab
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      Appearance                          "
