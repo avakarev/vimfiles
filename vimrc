@@ -497,16 +497,18 @@ augroup CustomFiletypes
 augroup END
 
 " Easy filetype switching
-nnoremap _m :set filetype=markdown<CR>
-nnoremap _l :set filetype=lua<CR>
-nnoremap _x :set filetype=xml<CR>
-nnoremap _j :set filetype=javascript<CR>
-nnoremap _t :set filetype=tt2<CR>
-nnoremap _v :set filetype=vim<CR>
-nnoremap _s :set filetype=sh<CR>
-nnoremap _h :set filetype=html<CR>
-nnoremap _p :set filetype=python<CR>
-nnoremap _r :set filetype=ruby<CR>
+amenu SetSyntax.markdown :set filetype=markdown<CR>
+amenu SetSyntax.lua :set filetype=lua<CR>
+amenu SetSyntax.xml :set filetype=xml<CR>
+amenu SetSyntax.javascript :set filetype=javascript<CR>
+amenu SetSyntax.tt2 :set filetype=tt2<CR>
+amenu SetSyntax.vim :set filetype=vim<CR>
+amenu SetSyntax.sh :set filetype=sh<CR>
+amenu SetSyntax.html :set filetype=html<CR>
+amenu SetSyntax.css :set filetype=css<CR>
+amenu SetSyntax.python :set filetype=python<CR>
+amenu SetSyntax.ruby :set filetype=ruby<CR>
+nnoremap <leader>_ :emenu SetSyntax.
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
