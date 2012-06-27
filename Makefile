@@ -26,7 +26,7 @@ all:
 	@while true; do \
 		echo "It might hurt your feelings. Are you sure ot continue? (yes/no)"; \
 		read answer; \
-		if [[ $$answer != "yes" ]]; then \
+		if [ $$answer != "yes" ]; then \
 			echo "Nothing was made. Bye."; \
 			exit; \
 		else \
