@@ -91,3 +91,6 @@
 [submodule "vim/bundle/colors-molokai"]
 	path = vim/bundle/colors-molokai
 	url = git://github.com/vim-scripts/molokai.git
+[submodule "vim/bundle/syntax-minitest"]
+	path = vim/bundle/syntax-minitest
+	url = git://github.com/sunaku/vim-ruby-minitest.git
