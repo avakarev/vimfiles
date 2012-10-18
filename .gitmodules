@@ -97,3 +97,6 @@
 [submodule "vim/bundle/syntax-less"]
 	path = vim/bundle/syntax-less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/syntax-scss"]
+	path = vim/bundle/syntax-scss
+	url = git://github.com/cakebaker/scss-syntax.vim.git
