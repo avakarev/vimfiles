@@ -9,7 +9,7 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 filetype off
 
 " List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = ["pathogen","taglist","syntastic","archer"]
+let g:pathogen_disabled = ["pathogen","taglist","snipmate","syntastic","archer","toddler"]
 call pathogen#infect()
 filetype plugin indent on
 
@@ -94,7 +94,7 @@ if has("unix")
     set langmenu=en_US.UTF-8
 endif
 
-set autoread " Re-read file if it was changed outside of Vim
+set autoread " Re-read file if it was changed outside of Vim. Use :e to reload current file.
 
 set confirm " Y-N-C prompt if closing with unsaved changes.
 
@@ -634,6 +634,8 @@ let g:yankring_max_history = 200
 let g:yankring_max_display = 200
 let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
+let g:yankring_replace_n_pkey = ''
+let g:yankring_replace_n_nkey = ''
 
 
 "                       [ A ]
