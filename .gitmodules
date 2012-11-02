@@ -66,7 +66,7 @@
 	url = git://github.com/vim-scripts/nginx.vim.git
 [submodule "vim/bundle/syntax-perl"]
 	path = vim/bundle/syntax-perl
-	url = git://github.com/petdance/vim-perl.git
+	url = git://github.com/vim-perl/vim-perl.git
 [submodule "vim/bundle/syntax-stylus"]
 	path = vim/bundle/syntax-stylus
 	url = git://github.com/wavded/vim-stylus.git
