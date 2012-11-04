@@ -506,6 +506,9 @@ augroup CustomFiletypes
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType ruby,eruby,cucumber,python,yaml,scss,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh call DetectShellScript()
+
+    " Various pretyped templates when new file is created with Vim
+    autocmd BufNewFile * silent! 0r $HOME/.vim/tmpl/%:e
 augroup END
 
 " Easy filetype switching
