@@ -654,3 +654,13 @@ let g:yankring_replace_n_nkey = ''
 
 let g:alternateExtensions_m = "h"
 let g:alternateExtensions_h = "m"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   Local vim config                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+    " source ~/.vimrc.local
+endif
