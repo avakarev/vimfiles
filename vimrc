@@ -458,6 +458,17 @@ if has('windows')
     set tabline=%!MyTabLine()
 endif
 
+" Map <leader>+num for switching to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Filetypes                          "
@@ -484,15 +495,16 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *bash/* setlocal filetype=sh
     autocmd BufNewFile,BufRead *zsh/* setlocal filetype=zsh
     autocmd BufNewFile,BufRead *.tt2 setlocal filetype=tt2
-    autocmd BufNewFile,BufRead *.scss setlocal filetype=css
+    autocmd BufNewFile,BufRead *.scss setlocal filetype=scss
     autocmd BufNewFile,BufRead */nginx/* setlocal filetype=nginx
     autocmd BufNewFile,BufRead *tmux.conf* setlocal filetype=tmux
+    autocmd BufNewFile,BufRead .taskrc setlocal filetype=conf
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
-    autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,config.ru} setlocal filetype=ruby
+    autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,Vagrantfile,config.ru} setlocal filetype=ruby
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
-    autocmd FileType ruby,eruby,cucumber,python,yaml,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType ruby,eruby,cucumber,python,yaml,scss,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh call DetectShellScript()
 augroup END
 
@@ -642,14 +654,3 @@ let g:yankring_replace_n_nkey = ''
 
 let g:alternateExtensions_m = "h"
 let g:alternateExtensions_h = "m"
-
-" Map <leader>+num for switching to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
