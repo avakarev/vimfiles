@@ -9,7 +9,7 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 filetype off
 
 " List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = ["pathogen","taglist","snipmate","syntastic","archer","toddler"]
+let g:pathogen_disabled = ["pathogen","taglist","snipmate","syntastic","archer"]
 call pathogen#infect()
 filetype plugin indent on
 
@@ -486,6 +486,24 @@ function! DetectShellScript()
     endif
 endfunction
 
+" Prefill new file with template, depends on filetype
+function! LoadTemplate()
+
+    let fileByName = $HOME.'/.vim/tmpl/'.expand("%")
+    let fileByExt  = $HOME.'/.vim/tmpl/'.expand("%:e")
+
+    " Try first load file by {name.ext} - controller.rb
+    if filereadable(fileByName)
+        silent! execute ':0read '.fileByName
+    " And then just by {ext} - rb
+    elseif filereadable(fileByExt)
+        silent! execute ':0read '.fileByExt
+    endif
+
+    " Remove all empty lines at the end of file and set cursor to the first line
+    silent! %s#\($\n\s*\)\+\%$## | execute ':1'
+endfunction
+
 " Set up custom filetype settings
 augroup CustomFiletypes
     autocmd!
@@ -508,7 +526,8 @@ augroup CustomFiletypes
     autocmd FileType sh call DetectShellScript()
 
     " Various pretyped templates when new file is created with Vim
-    autocmd BufNewFile * silent! 0r $HOME/.vim/tmpl/%:e
+    autocmd! BufNewFile * call LoadTemplate()
+
 augroup END
 
 " Easy filetype switching
