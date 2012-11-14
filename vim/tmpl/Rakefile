@@ -1,0 +1,17 @@
+require 'rake/testtask'
+
+desc 'Descripttion for generate task'
+task :generate do
+  puts "Doing some generating"
+end
+task :g => :generate
+
+Rake::TestTask.new do |t|
+  Rake::Task[:g].invoke
+
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
+  t.libs = %w[lib test]
+end
+
+task :default => :test
