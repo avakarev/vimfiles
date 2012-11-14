@@ -100,3 +100,6 @@
 [submodule "vim/bundle/syntax-scss"]
 	path = vim/bundle/syntax-scss
 	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
