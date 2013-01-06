@@ -100,9 +100,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/syntax-slim"]
-	path = vim/bundle/syntax-slim
-	url = git://github.com/bbommarito/vim-slim.git
 [submodule "vim/bundle/autoclose"]
 	path = vim/bundle/autoclose
 	url = git://github.com/seletskiy/vim-autoclose.git
