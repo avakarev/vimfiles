@@ -106,3 +106,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/colors-mango"]
+	path = vim/bundle/colors-mango
+	url = git://github.com/goatslacker/mango.vim.git
