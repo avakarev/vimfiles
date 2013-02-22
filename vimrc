@@ -530,6 +530,11 @@ augroup CustomFiletypes
 
 augroup END
 
+" Try to speed up ruby.vim when it has trouble finding the right ruby
+if 'ruby' == &filetype && !empty($MY_RUBY_HOME)
+    let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/ruby/site_ruby/*'),"\n"),',')
+endif
+
 " Easy filetype switching
 amenu SetSyntax.markdown :setlocal filetype=markdown<CR>
 amenu SetSyntax.lua :setlocal filetype=lua<CR>
