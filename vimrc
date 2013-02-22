@@ -477,12 +477,12 @@ noremap <leader>9 9gt
 " Try to detect filetype by interpreter directive
 function! DetectLangByShebang()
     let interpreter_directive = getline(1)
-    if interpreter_directive =~ 'node'
+    if interpreter_directive =~ 'ruby\|rake'
+        setlocal filetype=ruby
+    elseif interpreter_directive =~ 'node'
         setlocal filetype=javascript
     elseif interpreter_directive =~ 'python'
         setlocal filetype=python
-    elseif interpreter_directive =~ 'ruby' || interpreter_directive =~ 'rake'
-        setlocal filetype=ruby
     endif
 endfunction
 
@@ -523,7 +523,7 @@ augroup CustomFiletypes
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType ruby,eruby,cucumber,python,yaml,scss,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType sh call DetectLangByShebang()
+    autocmd FileType sh,conf call DetectLangByShebang()
 
     " Various pretyped templates when new file is created with Vim
     autocmd! BufNewFile * call LoadTemplate()
