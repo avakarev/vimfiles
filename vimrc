@@ -481,7 +481,7 @@ function! DetectLangByShebang()
         setlocal filetype=javascript
     elseif interpreter_directive =~ 'python'
         setlocal filetype=python
-    elseif interpreter_directive =~ 'ruby'
+    elseif interpreter_directive =~ 'ruby' || interpreter_directive =~ 'rake'
         setlocal filetype=ruby
     endif
 endfunction
