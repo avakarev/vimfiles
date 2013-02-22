@@ -475,7 +475,7 @@ noremap <leader>9 9gt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Try to detect filetype by interpreter directive
-function! DetectShellScript()
+function! DetectLangByShebang()
     let interpreter_directive = getline(1)
     if interpreter_directive =~ 'node'
         setlocal filetype=javascript
@@ -523,7 +523,7 @@ augroup CustomFiletypes
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType ruby,eruby,cucumber,python,yaml,scss,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType sh call DetectShellScript()
+    autocmd FileType sh call DetectLangByShebang()
 
     " Various pretyped templates when new file is created with Vim
     autocmd! BufNewFile * call LoadTemplate()
