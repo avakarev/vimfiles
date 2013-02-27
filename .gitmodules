@@ -112,3 +112,6 @@
 [submodule "vim/bundle/colors-zenburn"]
 	path = vim/bundle/colors-zenburn
 	url = git://github.com/jnurmine/Zenburn.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git://github.com/mileszs/ack.vim.git
