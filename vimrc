@@ -613,6 +613,12 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
 
 
+"                     [ Extradite ]
+
+let g:extradite_showhash = 1
+nnoremap <leader>te :Extradite<CR>
+
+
 "                       [ MRU ]
 
 nnoremap <leader>m :MRU<CR>

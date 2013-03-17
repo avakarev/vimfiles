@@ -115,3 +115,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/extradite"]
+	path = vim/bundle/extradite
+	url = git://github.com/int3/vim-extradite.git
