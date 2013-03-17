@@ -689,6 +689,13 @@ let g:alternateExtensions_m = "h"
 let g:alternateExtensions_h = "m"
 
 
+"                     [ CtrlP ]
+
+ let g:ctrlp_working_path_mode = 'a'
+ let g:ctrlp_max_height = 20
+ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(git|hg|svn|bzr)($|[/\\])|__init__\.py|doc'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   Local vim config                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
