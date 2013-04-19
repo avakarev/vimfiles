@@ -69,6 +69,10 @@ zg          add a word to the dictionary
 zug         undo the addition of a word to the dictionary
 z=          view spelling suggestions for a misspelled word
 
+" -------------- [VimDiff] --------------
+zR          open all folds
+za          recreate the folds again
+
 " -------------- [Fuck you, Windows] --------------
 ^M in VIM can be manipulated as it is an \r character.
 Often times other developers would edit files under Windows and ^M characters would be inserted.
