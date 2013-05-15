@@ -45,6 +45,11 @@ J           join two lines
 gt          next tab
 gT          previous tab
 
+" -------------- [Search] --------------
+/<pattern>  Searches forward for a pattern
+?<pattern>  Searches backward for a pattern
+n           Searches for the next occurrence of the pattern
+N           Searches for the previous occurrence of the pattern
 
 :help vim-modes-intro
 :help mode-switching
