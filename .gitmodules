@@ -112,3 +112,6 @@
 [submodule "vim/bundle/extradite"]
 	path = vim/bundle/extradite
 	url = git://github.com/int3/vim-extradite.git
+[submodule "vim/bundle/bufexplorer"]
+	path = vim/bundle/bufexplorer
+	url = git://github.com/vim-scripts/bufexplorer.zip.git
