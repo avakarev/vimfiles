@@ -197,6 +197,21 @@ function! ToggleFolding()
         set foldcolumn=0
     endif
 endfunction
+"  end-of-line @ end-of-file
+nnoremap <leader>tb :call ToggleEOLatEOF()<CR>
+function! ToggleEOLatEOF()
+    " Disable/Enable EOL at EOF
+    if exists('g:eol_at_eof_enabled') && g:eol_at_eof_enabled
+        let g:eol_at_eof_enabled = 0
+        autocmd BufWritePre * setlocal nobinary eol
+        echo "EOL at EOF turned OFF"
+    else
+        let g:eol_at_eof_enabled = 1
+        autocmd BufWritePre * setlocal binary noeol
+        echo "EOL at EOF turned ON"
+    endif
+    autocmd BufWritePost * setlocal nobinary eol
+endfunction
 "  spell
 nnoremap <leader>ts :set spell! <Bar> set spell?<CR>
 "  relative number
