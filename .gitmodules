@@ -94,9 +94,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/autoclose"]
-	path = vim/bundle/autoclose
-	url = git://github.com/seletskiy/vim-autoclose.git
 [submodule "vim/bundle/colors-mango"]
 	path = vim/bundle/colors-mango
 	url = git://github.com/goatslacker/mango.vim.git
