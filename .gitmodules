@@ -112,3 +112,6 @@
 [submodule "vim/bundle/syntax-handlebars"]
 	path = vim/bundle/syntax-handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "vim/bundle/syntax-git"]
+	path = vim/bundle/syntax-git
+	url = https://github.com/tpope/vim-git.git
