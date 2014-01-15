@@ -115,3 +115,6 @@
 [submodule "vim/bundle/syntax-git"]
 	path = vim/bundle/syntax-git
 	url = https://github.com/tpope/vim-git.git
+[submodule "vim/bundle/colors-lucius"]
+	path = vim/bundle/colors-lucius
+	url = git://github.com/jonathanfilip/vim-lucius.git
