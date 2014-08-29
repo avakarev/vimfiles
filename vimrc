@@ -626,6 +626,7 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gb :Gblame<CR>
+set diffopt+=vertical
 
 
 "                     [ Extradite ]
