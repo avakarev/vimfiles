@@ -118,3 +118,6 @@
 [submodule "vim/bundle/colors-lucius"]
 	path = vim/bundle/colors-lucius
 	url = git://github.com/jonathanfilip/vim-lucius.git
+[submodule "vim/bundle/colors-railscasts"]
+	path = vim/bundle/colors-railscasts
+	url = git://github.com/chankaward/vim-railscasts-theme.git
