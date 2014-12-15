@@ -11,7 +11,7 @@ set guioptions-=b " Do not display bottom (horizontal) scrollbar
 
 set guicursor=a:blinkon0 " Switch off blinking for all modes
 
-if has("gui_macvim")
+if has("gui_macvim") || has('gui_vimr')
     set guifont=Monaco:h13 " Make font size bigger
 elseif has("unix")
     set guifont=DejaVu\ Sans\ Mono\ 11
@@ -26,7 +26,7 @@ if has('gui_running')
     set mousefocus " Mouse can control splits
 endif
 
-if has('gui_macvim')
+if has('gui_macvim') || has('gui_vimr')
     nmap <D-CR> :set fullscreen!<Bar> set fullscreen?<CR>
     vmap <D-CR> <ESC>:set fullscreen!<Bar> set fullscreen?<CR>
     imap <D-CR> <ESC>:set fullscreen!<Bar> set fullscreen?<CR>
