@@ -130,3 +130,6 @@
 [submodule "vim/bundle/syntax-toml"]
 	path = vim/bundle/syntax-toml
 	url = git://github.com/cespare/vim-toml.git
+[submodule "vim/bundle/syntax-scala"]
+	path = vim/bundle/syntax-scala
+	url = git://github.com/derekwyatt/vim-scala.git
