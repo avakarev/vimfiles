@@ -133,3 +133,6 @@
 [submodule "vim/bundle/syntax-scala"]
 	path = vim/bundle/syntax-scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "vim/bundle/syntax-elixir"]
+	path = vim/bundle/syntax-elixir
+	url = git://github.com/elixir-lang/vim-elixir.git
