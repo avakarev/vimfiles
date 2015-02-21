@@ -136,3 +136,6 @@
 [submodule "vim/bundle/syntax-elixir"]
 	path = vim/bundle/syntax-elixir
 	url = git://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/syntax-go"]
+	path = vim/bundle/syntax-go
+	url = git://github.com/fatih/vim-go.git
