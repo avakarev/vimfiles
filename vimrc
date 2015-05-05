@@ -9,7 +9,12 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 filetype off
 
 " List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = ["pathogen","snipmate","archer","syntax-javascript"]
+let g:pathogen_disabled = [
+            \"pathogen",
+            \"snipmate",
+            \"archer",
+            \"syntax-javascript",
+            \]
 call pathogen#infect()
 filetype plugin indent on
 
