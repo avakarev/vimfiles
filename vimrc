@@ -542,7 +542,8 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
-    autocmd FileType ruby,eruby,cucumber,python,yaml,scss,jade,todo setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType scss,css,jade,html,handlebars.html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType ruby,eruby,yaml,cucumber,python setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh,conf call DetectLangByShebang()
 
     " Various pretyped templates when new file is created with Vim
