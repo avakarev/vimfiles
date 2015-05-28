@@ -540,6 +540,8 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,Vagrantfile,config.ru,*.god,*.cap,*.eye} setlocal filetype=ruby
     autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.go setlocal listchars=tab:  
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType scss,css,jade,html,handlebars.html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
