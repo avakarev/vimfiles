@@ -139,3 +139,6 @@
 [submodule "vim/bundle/syntax-go"]
 	path = vim/bundle/syntax-go
 	url = git://github.com/fatih/vim-go.git
+[submodule "vim/fonts"]
+	path = vim/fonts
+	url = git://github.com/powerline/fonts.git
