@@ -142,3 +142,6 @@
 [submodule "vim/bundle/syntax-mustache-handlebars"]
 	path = vim/bundle/syntax-mustache-handlebars
 	url = git://github.com/mustache/vim-mustache-handlebars.git
+[submodule "vim/bundle/colors-hybrid"]
+	path = vim/bundle/colors-hybrid
+	url = git://github.com/w0ng/vim-hybrid
