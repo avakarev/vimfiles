@@ -79,9 +79,6 @@
 [submodule "vim/bundle/colors-irblack"]
 	path = vim/bundle/colors-irblack
 	url = git://github.com/twerth/ir_black.git
-[submodule "vim/bundle/colors-molokai"]
-	path = vim/bundle/colors-molokai
-	url = git://github.com/tomasr/molokai.git
 [submodule "vim/bundle/syntax-minitest"]
 	path = vim/bundle/syntax-minitest
 	url = git://github.com/sunaku/vim-ruby-minitest.git
@@ -145,3 +142,6 @@
 [submodule "vim/bundle/colors-hybrid"]
 	path = vim/bundle/colors-hybrid
 	url = git://github.com/w0ng/vim-hybrid
+[submodule "vim/bundle/colors-monokai"]
+	path = vim/bundle/colors-monokai
+	url = git://github.com/sickill/vim-monokai.git
