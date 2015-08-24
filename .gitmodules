@@ -145,3 +145,6 @@
 [submodule "vim/bundle/colors-monokai"]
 	path = vim/bundle/colors-monokai
 	url = git://github.com/sickill/vim-monokai.git
+[submodule "vim/bundle/colors-shades-of-teal"]
+	path = vim/bundle/colors-shades-of-teal
+	url = git://github.com/kristiandupont/shades-of-teal.git
