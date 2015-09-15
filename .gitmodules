@@ -148,3 +148,6 @@
 [submodule "vim/bundle/colors-shades-of-teal"]
 	path = vim/bundle/colors-shades-of-teal
 	url = git://github.com/kristiandupont/shades-of-teal.git
+[submodule "vim/bundle/syntax-slim"]
+	path = vim/bundle/syntax-slim
+	url = git://github.com/slim-template/vim-slim.git
