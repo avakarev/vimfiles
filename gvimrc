@@ -15,6 +15,7 @@ if has("gui_macvim") || has('gui_vimr')
     " set guifont=Monaco:h13
     " set guifont=Menlo:h13
     " set guifont=Anonymous\ Pro\ for\ Powerline:h15
+    " set guifont=Cousine\ for\ Powerline:h14
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
     " set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h15
@@ -32,6 +33,10 @@ if has("gui_macvim") || has('gui_vimr')
     " set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h15
     " set guifont=Meslo\ LG\ S\ for\ Powerline:h15
     " set guifont=monofur\ for\ Powerline:h18
+    " set guifont=Roboto\ Mono\ for\ Powerline:h14
+    " set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14
+    " set guifont=Roboto\ Mono\ Medium\ for\ Powerline:h14
+    " set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h14
     " set guifont=Source\ Code\ Pro\ for\ Powerline:h15
     " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
 elseif has("unix")
