@@ -151,3 +151,6 @@
 [submodule "vim/bundle/syntax-slim"]
 	path = vim/bundle/syntax-slim
 	url = git://github.com/slim-template/vim-slim.git
+[submodule "vim/bundle/simpledb"]
+	path = vim/bundle/simpledb
+	url = git://github.com/ivalkeen/vim-simpledb
