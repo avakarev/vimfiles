@@ -120,7 +120,7 @@
 	url = git://github.com/endel/vim-github-colorscheme.git
 [submodule "vim/bundle/syntax-rust"]
 	path = vim/bundle/syntax-rust
-	url = https://github.com/wting/rust.vim.git
+	url = git://github.com/wting/rust.vim.git
 [submodule "vim/bundle/syntax-toml"]
 	path = vim/bundle/syntax-toml
 	url = git://github.com/cespare/vim-toml.git
