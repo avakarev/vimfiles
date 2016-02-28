@@ -1,4 +1,4 @@
-colorscheme xoria256
+colorscheme xoria256+
 
 set lines=30 columns=120 " Size of MacVim window
 set linespace=0          " Number of pixel lines inserted between characters
@@ -54,9 +54,30 @@ endif
 
 if has('gui_macvim') || has('gui_vimr')
     nmap <D-CR> :set fullscreen!<Bar> set fullscreen?<CR>
+    " nmap <D-CR> :call ToggleFullscreen()<CR>
     vmap <D-CR> <ESC>:set fullscreen!<Bar> set fullscreen?<CR>
+    " vmap <D-CR> <ESC>:call ToggleFullscreen()<CR>
     imap <D-CR> <ESC>:set fullscreen!<Bar> set fullscreen?<CR>
+    " imap <D-CR> <ESC>:call ToggleFullscreen()<CR>
 endif
+
+function! ToggleFullscreen()
+    " remember old_values
+    " when set fullscreen first time, get fullsize values and remember them
+
+    if !exists("l:initial_lines")
+        let l:initial_lines=&lines
+        let l:initial_columns=&columns
+    endif
+
+    if l:initial_lines != &lines
+        echo 1
+        set lines=l:initial_lines columns=l:initial_columns
+    else
+        echo 2
+        set lines=999 columns=999
+    end
+endfunction
 
 " GUI Tab settings
 function! GuiTabLabel()
