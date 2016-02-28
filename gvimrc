@@ -11,10 +11,11 @@ set guioptions-=b " Do not display bottom (horizontal) scrollbar
 
 set guicursor=a:blinkon0 " Switch off blinking for all modes
 
-if has("gui_macvim") || has('gui_vimr')
-    " set guifont=Monaco:h13
-    " set guifont=Menlo:h13
-    " set guifont=Anonymous\ Pro\ for\ Powerline:h15
+if has("gui_macvim") || has('gui_vimr') || has('gui_running')
+    " set guifont=Monaco:h14
+    " set guifont=Menlo:h14
+    " set guifont=PragmataPro\ Mono:h14
+    " set guifont=Anonymous\ Pro\ for\ Powerline:h14
     " set guifont=Cousine\ for\ Powerline:h14
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
