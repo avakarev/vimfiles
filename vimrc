@@ -139,18 +139,18 @@ nnoremap <silent> > >>
 nnoremap <silent> < <<
 vnoremap > >gv
 vnoremap < <gv
-nmap <silent> <Left> <
-nmap <silent> <Right> >
-vmap <silent> <Left> <
-vmap <silent> <Right> >
-imap <silent> <Left> <C-D>
-imap <silent> <Right> <C-T>
+" nmap <silent> <Left> <
+" nmap <silent> <Right> >
+" vmap <silent> <Left> <
+" vmap <silent> <Right> >
+" imap <silent> <Left> <C-D>
+" imap <silent> <Right> <C-T>
 
 " Move strings among other ones
-nnoremap <Up> ddkP
-nnoremap <Down> ddp
-vnoremap <Up> xkP'[V']
-vnoremap <Down> xp'[V']
+" nnoremap <Up> ddkP
+" nnoremap <Down> ddp
+" vnoremap <Up> xkP'[V']
+" vnoremap <Down> xp'[V']
 
 " Go to beginning/end of the line
 nnoremap <leader>h ^
@@ -572,6 +572,9 @@ amenu SetSyntax.css :setlocal filetype=css<CR>
 amenu SetSyntax.python :setlocal filetype=python<CR>
 amenu SetSyntax.ruby :setlocal filetype=ruby<CR>
 nnoremap <leader>_ :emenu SetSyntax.
+
+" Easy text formatting
+amenu FormatText.json :%!python -m json.tool<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
