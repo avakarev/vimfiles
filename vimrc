@@ -546,7 +546,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.go setlocal listchars=tab:  
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
-    autocmd FileType scss,css,jade,html,handlebars.html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType scss,css,jade,html,html.handlebars,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType ruby,eruby,yaml,cucumber,python setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh,conf call DetectLangByShebang()
 
