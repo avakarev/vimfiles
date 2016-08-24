@@ -14,6 +14,7 @@ let g:pathogen_disabled = [
             \"snipmate",
             \"archer",
             \"syntax-javascript",
+            \"syntax-minitest"
             \]
 call pathogen#infect()
 filetype plugin indent on
