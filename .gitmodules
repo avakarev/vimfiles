@@ -154,3 +154,6 @@
 [submodule "vim/bundle/simpledb"]
 	path = vim/bundle/simpledb
 	url = git://github.com/ivalkeen/vim-simpledb
+[submodule "vim/bundle/dash"]
+	path = vim/bundle/dash
+	url = git://github.com/rizzatti/dash.vim.git
