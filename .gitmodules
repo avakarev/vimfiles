@@ -157,3 +157,6 @@
 [submodule "vim/bundle/dash"]
 	path = vim/bundle/dash
 	url = git://github.com/rizzatti/dash.vim.git
+[submodule "vim/bundle/syntax-jsx"]
+	path = vim/bundle/syntax-jsx
+	url = git://github.com/mxw/vim-jsx.git
