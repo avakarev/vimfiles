@@ -721,7 +721,7 @@ let g:alternateExtensions_h = "m"
 let g:ctrlp_working_path_mode = 'a'
 let g:ctrlp_max_height = 20
 let g:ctrlp_custom_ignore = {
-    \'dir': '\v[\/]\.(git|hg|svn|bzr)$|node_modules|bin|doc|tmp',
+    \'dir': '\v[\/]\.(git|hg|svn|bzr)$|node_modules|bin|doc|tmp|deps|_build',
     \'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$'
     \}
 
