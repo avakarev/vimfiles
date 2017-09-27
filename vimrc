@@ -27,6 +27,10 @@ filetype plugin indent on
 set background=dark " Text background should be dark
 syntax on " Enable syntax highlighting
 
+if (has("termguicolors"))
+    set termguicolors
+endif
+
 " To enable 256-color schemes, make sure that terminal supports 256 colors
 if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
     set t_Co=256          " Enable 256-color mode
