@@ -160,3 +160,6 @@
 [submodule "vim/bundle/syntax-jsx"]
 	path = vim/bundle/syntax-jsx
 	url = git://github.com/mxw/vim-jsx.git
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = git://github.com/w0rp/ale.git
