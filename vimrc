@@ -735,6 +735,27 @@ let g:ctrlp_custom_ignore = {
 nnoremap <leader>sd :Dash <cword><CR>
 
 
+"                     [ ALE ]
+let g:ale_lint_on_text_changed = 'never'    " Don't run linter when I modify a buffer
+let g:ale_lint_on_enter = 1                 " Run linter when I open a new or modified buffer
+let g:ale_lint_on_save = 1                  " Run linter when I save a buffer
+let g:ale_lint_on_filetype_changed = 1      " Run linter when the filetype changes for a buffer
+
+nnoremap <leader>ta :ALEToggle<CR>
+
+let g:ale_linters = {
+    \'javascript': ['eslint'],
+    \'python': ['pycodestyle'],
+    \}
+
+let g:ale_fixers = {
+    \'javascript': ['eslint'],
+    \'python': ['autopep8'],
+    \}
+
+let g:ale_set_quickfix = 1
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   Local vim config                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
