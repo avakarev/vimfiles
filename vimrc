@@ -670,7 +670,7 @@ vmap <leader>c<space> <plug>NERDCommenterToggle
 "                      [ NERDTree ]
 
 let NERDTreeQuitOnOpen = 1  " Closes the tree window after opening a file
-let NERDTreeWinSize    = 38 " Sets the window size when the NERDTree is opened
+let NERDTreeWinSize    = 45 " Sets the window size when the NERDTree is opened
 let NERDTreeMinimalUI  = 1  " Disables the 'Bookmarks' label and 'Press ? for help' text
 let NERDTreeDirArrows  = 1  " Use arrows instead of + ~ chars when displaying directories
 let NERDTreeIgnore     = ['\.git','\.hg','\.svn','\.DS_Store','\.pyc','\.class']
