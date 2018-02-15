@@ -536,7 +536,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.{json,sublime-settings,babelrc} setlocal filetype=javascript
     autocmd BufNewFile,BufRead *bash_profile* setlocal filetype=sh
     autocmd BufNewFile,BufRead *bash/* setlocal filetype=sh
-    autocmd BufNewFile,BufRead .env{.local,.development} setlocal filetype=sh
+    autocmd BufNewFile,BufRead .env{.local,.development,.test,.example} setlocal filetype=sh
     autocmd BufNewFile,BufRead *zsh/* setlocal filetype=zsh
     autocmd BufNewFile,BufRead *.tt2 setlocal filetype=tt2
     autocmd BufNewFile,BufRead *.scss setlocal filetype=scss
