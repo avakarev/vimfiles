@@ -160,3 +160,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = git://github.com/w0rp/ale.git
+[submodule "vim/bundle/mix-format"]
+	path = vim/bundle/mix-format
+	url = git://github.com/mhinz/vim-mix-format.git

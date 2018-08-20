@@ -765,6 +765,10 @@ let g:ale_fixers = {
 let g:ale_set_quickfix = 1
 
 
+"                     [ mix-format ]
+let g:mix_format_on_save = 0
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   Local vim config                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
