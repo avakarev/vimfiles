@@ -163,3 +163,6 @@
 [submodule "vim/bundle/mix-format"]
 	path = vim/bundle/mix-format
 	url = git://github.com/mhinz/vim-mix-format.git
+[submodule "vim/bundle/syntax-typescript"]
+	path = vim/bundle/syntax-typescript
+	url = git://github.com/leafgarland/typescript-vim.git
