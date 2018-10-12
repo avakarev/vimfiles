@@ -148,3 +148,6 @@
 [submodule "vim/bundle/syntax-typescript"]
 	path = vim/bundle/syntax-typescript
 	url = git://github.com/leafgarland/typescript-vim.git
+[submodule "vim/bundle/syntax-docker"]
+	path = vim/bundle/syntax-docker
+	url = git://github.com/ekalinin/Dockerfile.vim.git
