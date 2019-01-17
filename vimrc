@@ -567,6 +567,7 @@ amenu SetSyntax.markdown :setlocal filetype=markdown<CR>
 amenu SetSyntax.lua :setlocal filetype=lua<CR>
 amenu SetSyntax.xml :setlocal filetype=xml<CR>
 amenu SetSyntax.javascript :setlocal filetype=javascript<CR>
+amenu SetSyntax.json :setlocal filetype=json<CR>
 amenu SetSyntax.tt2 :setlocal filetype=tt2<CR>
 amenu SetSyntax.vim :setlocal filetype=vim<CR>
 amenu SetSyntax.sh :setlocal filetype=sh<CR>
