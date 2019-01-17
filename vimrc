@@ -754,11 +754,13 @@ nnoremap <leader>ta :ALEToggle<CR>
 
 let g:ale_linters = {
     \'javascript': ['eslint'],
+    \'typescript': ['tslint'],
     \'python': ['pycodestyle'],
     \}
 
 let g:ale_fixers = {
     \'javascript': ['eslint'],
+    \'typescript': ['tslint'],
     \'python': ['autopep8'],
     \}
 
