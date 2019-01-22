@@ -645,12 +645,6 @@ nnoremap <leader>gb :Gblame<CR>
 set diffopt+=vertical
 
 
-"                     [ Extradite ]
-
-let g:extradite_showhash = 1
-nnoremap <leader>te :Extradite<CR>
-
-
 "                       [ MRU ]
 
 nnoremap <leader>m :MRU<CR>
