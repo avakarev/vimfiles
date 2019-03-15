@@ -551,6 +551,7 @@ augroup CustomFiletypes
     autocmd FileType scss,css,jade,html,html.handlebars,javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType ruby,eruby,yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh,conf call DetectLangByShebang()
+    autocmd FileType go setlocal list!
 
     " Various pretyped templates when new file is created with Vim
     autocmd! BufNewFile * call LoadTemplate()
