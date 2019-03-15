@@ -17,10 +17,11 @@ if has("gui_macvim") || has('gui_vimr') || has('gui_running')
     " set guifont=PragmataPro\ Mono:h14
     " set guifont=Anonymous\ Pro\ for\ Powerline:h14
     " set guifont=Cousine\ for\ Powerline:h14
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+    " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
     " set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h15
     " set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h15
+    set guifont=Fira\ Code:h15
     " set guifont=Fira\ Mono\ for\ Powerline:h15
     " set guifont=Fira\ Mono\ Medium\ for\ Powerline:h15
     " set guifont=Inconsolata\ for\ Powerline:h15
@@ -40,6 +41,7 @@ if has("gui_macvim") || has('gui_vimr') || has('gui_running')
     " set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h14
     " set guifont=Source\ Code\ Pro\ for\ Powerline:h15
     " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
+    set macligatures
 elseif has("unix")
     set guifont=DejaVu\ Sans\ Mono\ 11
 endif
