@@ -536,7 +536,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.{sublime-settings,babelrc} setlocal filetype=javascript
     autocmd BufNewFile,BufRead *bash_profile* setlocal filetype=sh
     autocmd BufNewFile,BufRead *bash/* setlocal filetype=sh
-    autocmd BufNewFile,BufRead .env{.local,.development,.test,.example} setlocal filetype=sh
+    autocmd BufNewFile,BufRead .env.{local,development,test,example} setlocal filetype=sh
     autocmd BufNewFile,BufRead *zsh/* setlocal filetype=zsh
     autocmd BufNewFile,BufRead *.tt2 setlocal filetype=tt2
     autocmd BufNewFile,BufRead *.scss setlocal filetype=scss
@@ -545,7 +545,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead .taskrc setlocal filetype=conf
     autocmd BufNewFile,BufRead *.plist setlocal filetype=xml
     autocmd BufNewFile,BufRead {Gemfile,Capfile,Kirkfile,Rakefile,Thorfile,Vagrantfile,config.ru,*.god,*.cap,*.eye} setlocal filetype=ruby
-    autocmd BufNewFile,BufRead *.txt setlocal spell foldcolumn=0
+    autocmd BufNewFile,BufRead *.{txt,todo} setlocal spell foldcolumn=0 tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType scss,css,jade,html,html.handlebars,javascript,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
