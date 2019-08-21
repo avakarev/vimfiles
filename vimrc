@@ -549,7 +549,7 @@ augroup CustomFiletypes
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType scss,css,jade,html,html.handlebars,javascript,json,typescript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd FileType ruby,eruby,yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType ruby,eruby,yaml,sshconfig setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd FileType sh,conf call DetectLangByShebang()
     autocmd FileType go setlocal nolist
 
