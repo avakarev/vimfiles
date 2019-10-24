@@ -27,7 +27,7 @@ filetype plugin indent on
 set background=dark " Text background should be dark
 syntax on " Enable syntax highlighting
 
-if (has("termguicolors"))
+if has("termguicolors")
     set termguicolors
 endif
 
