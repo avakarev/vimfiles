@@ -515,11 +515,15 @@ endfunction
 function! LoadTemplate()
 
     let fileByName = $HOME.'/.vim/tmpl/'.expand("%")
+    let fileByMask = $HOME.'/.vim/tmpl/'.expand("%")[-7:]
     let fileByExt  = $HOME.'/.vim/tmpl/'.expand("%:e")
 
     " Try first load file by {name.ext} - controller.rb
     if filereadable(fileByName)
         silent! execute ':0read '.fileByName
+    " Then try by mask - {part.ext} - test.go
+    elseif filereadable(fileByMask)
+        silent! execute ':0read '.fileByMask
     " And then just by {ext} - rb
     elseif filereadable(fileByExt)
         silent! execute ':0read '.fileByExt
