@@ -1,7 +1,9 @@
-package main
+package main_test
 
 import (
 	"testing"
+
+	"github.com/google/go-cmp/cmp"
 )
 
 func Even(n int) bool {
@@ -9,13 +11,13 @@ func Even(n int) bool {
 }
 
 func TestOneIsNotEven(t *testing.T) {
-	if Even(1) {
-		t.Errorf("Even(%d) = %t; want %t", 1, true, false)
+	if diff := cmp.Diff(Even(1), true); diff != "" {
+		t.Errorf("Even(%d) returned unexpected result (-want +got):\n%s", 1, diff)
 	}
 }
 
 func TestFourtyTwoIsEven(t *testing.T) {
-	if !Even(42) {
-		t.Errorf("Even(%d) = %t; want %t", 42, false, true)
+	if diff := cmp.Diff(Even(42), false); diff != "" {
+		t.Errorf("Even(%d) returned unexpected result (-want +got):\n%s", 42, diff)
 	}
 }
