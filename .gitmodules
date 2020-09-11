@@ -148,3 +148,6 @@
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "vim/bundle/syntax-terraform"]
+	path = vim/bundle/syntax-terraform
+	url = git://github.com/hashivim/vim-terraform.git
