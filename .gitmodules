@@ -151,3 +151,6 @@
 [submodule "vim/bundle/syntax-terraform"]
 	path = vim/bundle/syntax-terraform
 	url = git://github.com/hashivim/vim-terraform.git
+[submodule "vim/bundle/syntax-nunjucks"]
+	path = vim/bundle/syntax-nunjucks
+	url = git://github.com/niftylettuce/vim-jinja
