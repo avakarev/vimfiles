@@ -154,3 +154,6 @@
 [submodule "vim/bundle/syntax-nunjucks"]
 	path = vim/bundle/syntax-nunjucks
 	url = git://github.com/niftylettuce/vim-jinja
+[submodule "vim/bundle/syntax-vue"]
+	path = vim/bundle/syntax-vue
+	url = git://github.com/leafOfTree/vim-vue-plugin.git
