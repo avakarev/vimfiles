@@ -151,9 +151,9 @@
 [submodule "vim/bundle/syntax-terraform"]
 	path = vim/bundle/syntax-terraform
 	url = https://github.com/hashivim/vim-terraform.git
-[submodule "vim/bundle/syntax-nunjucks"]
-	path = vim/bundle/syntax-nunjucks
-	url = https://github.com/niftylettuce/vim-jinja
+[submodule "vim/bundle/syntax-jinja2"]
+	path = vim/bundle/syntax-jinja2
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
 [submodule "vim/bundle/syntax-vue"]
 	path = vim/bundle/syntax-vue
 	url = https://github.com/leafOfTree/vim-vue-plugin.git
