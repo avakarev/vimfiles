@@ -11,39 +11,43 @@ set guioptions-=b " Do not display bottom (horizontal) scrollbar
 
 set guicursor=a:blinkon0 " Switch off blinking for all modes
 
-if has("gui_macvim") || has('gui_vimr') || has('gui_running')
-    " set guifont=Monaco:h14
-    " set guifont=Menlo:h14
-    " set guifont=PragmataPro\ Mono:h14
-    " set guifont=Anonymous\ Pro\ for\ Powerline:h14
-    " set guifont=Cousine\ for\ Powerline:h14
-    " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
-    " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
-    " set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h15
-    " set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h15
-    set guifont=Fira\ Code:h15
-    " set guifont=Fira\ Mono\ for\ Powerline:h15
-    " set guifont=Fira\ Mono\ Medium\ for\ Powerline:h15
-    " set guifont=Inconsolata\ for\ Powerline:h15
-    " set guifont=Inconsolata-dz\ for\ Powerline:h15
-    " set guifont=Inconsolata-g\ for\ Powerline:h15
-    " set guifont=Liberation\ Mono\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ L\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ M\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h15
-    " set guifont=Meslo\ LG\ S\ for\ Powerline:h15
-    " set guifont=monofur\ for\ Powerline:h18
-    " set guifont=Roboto\ Mono\ for\ Powerline:h14
-    " set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14
-    " set guifont=Roboto\ Mono\ Medium\ for\ Powerline:h14
-    " set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h14
-    " set guifont=Source\ Code\ Pro\ for\ Powerline:h15
-    " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
-    set macligatures
-elseif has("unix")
-    set guifont=DejaVu\ Sans\ Mono\ 11
+" to get font catalog, run `:set guifont=*`
+if has('gui_running')
+    if has("linux")
+        set guifont=DejaVu\ Sans\ Mono\ 11
+    elseif has("gui_macvim") || has('gui_vimr')
+        " set guifont=Monaco:h14
+        " set guifont=Menlo:h14
+        " set guifont=PragmataPro\ Mono:h14
+        " set guifont=Anonymous\ Pro\ for\ Powerline:h14
+        " set guifont=Cousine\ for\ Powerline:h14
+        " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
+        " set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
+        " set guifont=Droid\ Sans\ Mono\ Dotted\ for\ Powerline:h15
+        " set guifont=Droid\ Sans\ Mono\ Slashed\ for\ Powerline:h15
+        set guifont=Fira\ Code:h15
+        " set guifont=Fira\ Mono\ for\ Powerline:h15
+        " set guifont=Fira\ Mono\ Medium\ for\ Powerline:h15
+        " set guifont=Inconsolata\ for\ Powerline:h15
+        " set guifont=Inconsolata-dz\ for\ Powerline:h15
+        " set guifont=Inconsolata-g\ for\ Powerline:h15
+        " set guifont=Liberation\ Mono\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ L\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ M\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline:h15
+        " set guifont=Meslo\ LG\ S\ for\ Powerline:h15
+        " set guifont=monofur\ for\ Powerline:h18
+        " set guifont=Monospace:h15
+        " set guifont=Roboto\ Mono\ for\ Powerline:h14
+        " set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14
+        " set guifont=Roboto\ Mono\ Medium\ for\ Powerline:h14
+        " set guifont=Roboto\ Mono\ Thin\ for\ Powerline:h14
+        " set guifont=Source\ Code\ Pro\ for\ Powerline:h15
+        " set guifont=Ubuntu\ Mono\ derivative\ Powerline:h18
+        " set macligatures
+    endif
 endif
 
 if exists('+colorcolumn')
