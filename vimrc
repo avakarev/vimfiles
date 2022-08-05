@@ -590,7 +590,7 @@ amenu SetSyntax.ruby :setlocal filetype=ruby<CR>
 nnoremap <leader>_ :emenu SetSyntax.
 
 " Easy text formatting
-amenu FormatText.json :%!python -m json.tool<CR>
+amenu FormatText.json :%!python3 -m json.tool<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
