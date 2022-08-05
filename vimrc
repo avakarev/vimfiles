@@ -760,6 +760,7 @@ let g:ale_lint_on_filetype_changed = 1      " Run linter when the filetype chang
 nnoremap <leader>ta :ALEToggle<CR>
 
 let g:ale_linters = {
+    \'json': ['jsonlint'],
     \'javascript': ['eslint'],
     \'typescript': ['tslint'],
     \'python': ['pycodestyle'],
