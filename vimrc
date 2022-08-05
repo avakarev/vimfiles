@@ -543,7 +543,7 @@ endfunction
 augroup CustomFiletypes
     autocmd!
     autocmd BufNewFile,BufRead *vimpagerrc* setlocal filetype=vim
-    autocmd BufNewFile,BufRead *.{sublime-settings,babelrc} setlocal filetype=javascript
+    autocmd BufNewFile,BufRead *.{sublime-settings},*.jsm setlocal filetype=javascript
     autocmd BufNewFile,BufRead *bash_profile* setlocal filetype=sh
     autocmd BufNewFile,BufRead *bash/* setlocal filetype=sh
     autocmd BufNewFile,BufRead .env.{local,development,test,example} setlocal filetype=sh
