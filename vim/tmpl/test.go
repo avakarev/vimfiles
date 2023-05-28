@@ -3,21 +3,21 @@ package main_test
 import (
 	"testing"
 
-	"github.com/google/go-cmp/cmp"
+	"github.com/avakarev/go-testutil"
 )
 
-func Even(n int) bool {
-	return n%2 == 0
+func even(n int) (bool, error) {
+	return n%2 == 0, nil
 }
 
 func TestOneIsNotEven(t *testing.T) {
-	if diff := cmp.Diff(Even(1), true); diff != "" {
-		t.Errorf("Even(%d) returned unexpected result (-want +got):\n%s", 1, diff)
-	}
+	res, err := even(1)
+	testutil.MustNoErr(err, t)
+	testutil.Diff(false, res, t)
 }
 
 func TestFourtyTwoIsEven(t *testing.T) {
-	if diff := cmp.Diff(Even(42), false); diff != "" {
-		t.Errorf("Even(%d) returned unexpected result (-want +got):\n%s", 42, diff)
-	}
+	res, err := even(42)
+	testutil.MustNoErr(err, t)
+	testutil.Diff(true, res, t)
 }
