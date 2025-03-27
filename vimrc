@@ -668,10 +668,8 @@ let MRU_Max_Entries = 20
 "                   [ NERDCommenter ]
 
 let NERDSpaceDelims = 1 " Use a space after comment chars
-nmap <C-_> <plug>NERDCommenterToggle
-vmap <C-_> <plug>NERDCommenterToggle
-nmap <leader>c<space> <plug>NERDCommenterToggle
-vmap <leader>c<space> <plug>NERDCommenterToggle
+nmap gcc <plug>NERDCommenterToggle
+vmap gc <plug>NERDCommenterToggle
 
 
 "                      [ NERDTree ]
