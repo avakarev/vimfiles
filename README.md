@@ -4,8 +4,8 @@
 
 Download plugins, colorschemes and fonts included as git submodules:
 
-    git submodule update --init
+    make init
 
-Install [dotfiles-cli](https://github.com/avakarev/dotfiles-cli) and link the vimfiles:
+Make sym-links to home directory:
 
-    dotfiles link
+    make link
