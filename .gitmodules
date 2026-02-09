@@ -157,3 +157,6 @@
 [submodule "vim/bundle/syntax-vue"]
 	path = vim/bundle/syntax-vue
 	url = https://github.com/leafOfTree/vim-vue-plugin.git
+[submodule "vim/bundle/copilot"]
+	path = vim/bundle/copilot
+	url = https://github.com/github/copilot.vim

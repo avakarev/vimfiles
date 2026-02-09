@@ -782,6 +782,9 @@ let g:mix_format_silent_errors = 1
 "                     [ vim-go ]
 let g:go_template_autocreate = 0
 
+"                     [ copilot ]
+let g:copilot_enabled = 0 " Disable by default for any files
+nnoremap <leader>tc :let g:copilot_enabled = !g:copilot_enabled<CR>:echo "Copilot: " . (g:copilot_enabled ? "ON" : "OFF")<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                   Local vim config                       "
