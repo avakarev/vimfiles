@@ -160,3 +160,6 @@
 [submodule "vim/bundle/copilot"]
 	path = vim/bundle/copilot
 	url = https://github.com/github/copilot.vim
+[submodule "vim/bundle/syntax-alloy"]
+	path = vim/bundle/syntax-alloy
+	url = https://github.com/grafana/vim-alloy.git
