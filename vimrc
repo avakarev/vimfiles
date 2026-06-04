@@ -3,20 +3,74 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       Pathogen                           "
+"                       minpac                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype off
+function! PackInit() abort
+    packadd minpac
 
-" List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = [
-            \"pathogen",
-            \"snipmate",
-            \"archer",
-            \"syntax-javascript",
-            \"syntax-minitest"
-            \]
-call pathogen#infect()
+    call minpac#init()
+
+    " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+    " Define plugins
+    call minpac#add('andymass/vim-matchup')
+    call minpac#add('avakarev/vim-watchdog')
+    call minpac#add('ervandew/supertab')
+    " call minpac#add('github/copilot.vim')
+    call minpac#add('jlanzarotta/bufexplorer')
+    " call minpac#add('kien/ctrlp.vim')
+    " call minpac#add('mileszs/ack.vim')
+    call minpac#add('scrooloose/nerdcommenter')
+    call minpac#add('scrooloose/nerdtree')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('vim-scripts/TaskList.vim')
+    call minpac#add('vim-scripts/YankRing.vim')
+    call minpac#add('w0rp/ale')
+    call minpac#add('yegappan/mru')
+
+    " Define colorschemes
+    " call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
+    " call minpac#add('chankaward/vim-railscasts-theme', {'type': 'opt'})
+    " call minpac#add('endel/vim-github-colorscheme', {'type': 'opt'})
+    " call minpac#add('goatslacker/mango.vim', {'type': 'opt'})
+    " call minpac#add('guns/jellyx.vim', {'type': 'opt'})
+    " call minpac#add('jnurmine/Zenburn', {'type': 'opt'})
+    " call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
+    " call minpac#add('kristiandupont/shades-of-teal', {'type': 'opt'})
+    " call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
+    " call minpac#add('sickill/vim-monokai', {'type': 'opt'})
+    " call minpac#add('twerth/ir_black', {'type': 'opt'})
+    call minpac#add('avakarev/xoria256.vim', {'type': 'opt'})
+    " call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
+
+    " Define syntax plugins
+    call minpac#add('Glench/Vim-Jinja2-Syntax')
+    call minpac#add('cakebaker/scss-syntax.vim')
+    call minpac#add('cespare/vim-toml')
+    call minpac#add('chr4/nginx.vim')
+    call minpac#add('ekalinin/Dockerfile.vim')
+    call minpac#add('fatih/vim-go')
+    call minpac#add('grafana/vim-alloy')
+    call minpac#add('hashivim/vim-terraform')
+    call minpac#add('leafOfTree/vim-vue-plugin')
+    call minpac#add('leafgarland/typescript-vim')
+    call minpac#add('mustache/vim-mustache-handlebars')
+    " call minpac#add('mxw/vim-jsx')
+    call minpac#add('othree/html5.vim')
+    call minpac#add('tpope/vim-git')
+    call minpac#add('tpope/vim-markdown')
+    call minpac#add('wting/rust.vim')
+endfunction
+
+" Define minpac commands
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+
+filetype off
 filetype plugin indent on
 
 
@@ -34,6 +88,7 @@ endif
 " To enable 256-color schemes, make sure that terminal supports 256 colors
 if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
     set t_Co=256          " Enable 256-color mode
+    packadd xoria256.vim
     colorscheme xoria256+ " Set nice 256-color scheme
 else
     colorscheme default
@@ -49,9 +104,9 @@ set sidescroll=1    " Minimal number of columns to scroll horizontally
 set sidescrolloff=3 " Minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set
 
 " Ctrl+j moves cursor 5 lines up
-noremap <C-j> 5j<CR>
+noremap <C-j> 5j
 " Ctrl+k moves cursor 5 lines down
-noremap <C-k> 5k<CR>
+noremap <C-k> 5k
 
 " Differs from 'j' and 'k' when lines wrap, because it's not linewise
 noremap j gj
@@ -252,7 +307,7 @@ function! ToggleOverLengthHi()
 endfunction
 
 " yy, dd and p works with system clipboard
-set clipboard=unnamed " But only 7.03+ version supported
+set clipboard=unnamed,unnamedplus
 
 set history=1000    " Remember more commands and search history
 set undolevels=1000 " Set huge undo steps
@@ -652,9 +707,9 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 
 "                     [ Fugitive ]
 
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gd :Gdiffsplit<CR>
+nnoremap <leader>gb :Git blame<CR>
 set diffopt+=vertical
 
 
@@ -688,12 +743,14 @@ let NERDTreeBookmarksFile = $HOME . '/.vim/local/NERDTreeBookmarks' " This is wh
 map <C-e> :NERDTreeToggle<CR> " Toggle NERDTree side pane
 map <C-x> :NERDTreeFind<CR>   " Find current file in NERDTree
 
-" autocmd VimEnter * NERDTree       " Auto-open NERDTree with vim
-" autocmd VimEnter * wincmd p       " Focus main window when vim opens with NERDTree
-" autocmd BufEnter * NERDTreeMirror " Auto-open NERDTree with new tab
+" autocmd VimEnter * NERDTree            " Start NERDTree and leave the cursor in it.
+" autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
-" Close vim if the only window left open is a NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 
 "                     [ Supertab ]
@@ -710,7 +767,6 @@ map <leader>tt <Plug>TaskList
 "                     [ YankRing ]
 
 nnoremap <leader>yr :YRShow<CR>
-let g:yankring_replace_n_nkey = ''
 let g:yankring_history_dir = $HOME . '/.vim/local'
 let g:yankring_max_history = 200
 let g:yankring_max_display = 200
@@ -718,12 +774,6 @@ let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
 let g:yankring_replace_n_pkey = ''
 let g:yankring_replace_n_nkey = ''
-
-
-"                       [ A ]
-
-let g:alternateExtensions_m = "h"
-let g:alternateExtensions_h = "m"
 
 
 "                     [ CtrlP ]
@@ -734,11 +784,6 @@ let g:ctrlp_custom_ignore = {
     \'dir': '\v[\/]\.(git|hg|svn|bzr)$|node_modules|bin|doc|tmp|deps|_build',
     \'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$'
     \}
-
-
-"                     [ Dash ]
-
-nnoremap <leader>sd :Dash <cword><CR>
 
 
 "                     [ Ack ]
@@ -761,22 +806,17 @@ nnoremap <leader>ta :ALEToggle<CR>
 let g:ale_linters = {
     \'json': ['jsonlint'],
     \'javascript': ['eslint'],
-    \'typescript': ['tslint'],
+    \'typescript': ['eslint'],
     \'python': ['pycodestyle'],
     \}
 
 let g:ale_fixers = {
     \'javascript': ['eslint'],
-    \'typescript': ['tslint'],
+    \'typescript': ['eslint'],
     \'python': ['autopep8'],
     \}
 
 let g:ale_set_quickfix = 1
-
-
-"                     [ mix-format ]
-let g:mix_format_on_save = 1
-let g:mix_format_silent_errors = 1
 
 
 "                     [ vim-go ]
@@ -796,6 +836,6 @@ nnoremap <leader>tc :let g:copilot_enabled = !g:copilot_enabled<CR>:echo "Copilo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
+" if filereadable(expand("~/.vimrc.local"))
     " source ~/.vimrc.local
-endif
+" endif
