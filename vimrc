@@ -26,7 +26,7 @@ function! PackInit() abort
     call minpac#add('scrooloose/nerdtree')
     call minpac#add('tpope/vim-fugitive')
     call minpac#add('tpope/vim-surround')
-    " call minpac#add('vim-scripts/TaskList.vim')
+    call minpac#add('vim-scripts/TaskList.vim')
     call minpac#add('vim-scripts/YankRing.vim')
     call minpac#add('w0rp/ale')
     call minpac#add('yegappan/mru')
@@ -104,9 +104,9 @@ set sidescroll=1    " Minimal number of columns to scroll horizontally
 set sidescrolloff=3 " Minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set
 
 " Ctrl+j moves cursor 5 lines up
-noremap <C-j> 5j<CR>
+noremap <C-j> 5j
 " Ctrl+k moves cursor 5 lines down
-noremap <C-k> 5k<CR>
+noremap <C-k> 5k
 
 " Differs from 'j' and 'k' when lines wrap, because it's not linewise
 noremap j gj
@@ -307,7 +307,7 @@ function! ToggleOverLengthHi()
 endfunction
 
 " yy, dd and p works with system clipboard
-set clipboard=unnamed " But only 7.03+ version supported
+set clipboard=unnamed,unnamedplus
 
 set history=1000    " Remember more commands and search history
 set undolevels=1000 " Set huge undo steps
@@ -707,9 +707,9 @@ command! -nargs=0 AppendDateTime :execute "normal a".strftime("%Y-%m-%d %H:%M")
 
 "                     [ Fugitive ]
 
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gd :Gdiffsplit<CR>
+nnoremap <leader>gb :Git blame<CR>
 set diffopt+=vertical
 
 
@@ -743,12 +743,14 @@ let NERDTreeBookmarksFile = $HOME . '/.vim/local/NERDTreeBookmarks' " This is wh
 map <C-e> :NERDTreeToggle<CR> " Toggle NERDTree side pane
 map <C-x> :NERDTreeFind<CR>   " Find current file in NERDTree
 
-" autocmd VimEnter * NERDTree       " Auto-open NERDTree with vim
-" autocmd VimEnter * wincmd p       " Focus main window when vim opens with NERDTree
-" autocmd BufEnter * NERDTreeMirror " Auto-open NERDTree with new tab
+" autocmd VimEnter * NERDTree            " Start NERDTree and leave the cursor in it.
+" autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
-" Close vim if the only window left open is a NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 
 "                     [ Supertab ]
@@ -765,7 +767,6 @@ map <leader>tt <Plug>TaskList
 "                     [ YankRing ]
 
 nnoremap <leader>yr :YRShow<CR>
-let g:yankring_replace_n_nkey = ''
 let g:yankring_history_dir = $HOME . '/.vim/local'
 let g:yankring_max_history = 200
 let g:yankring_max_display = 200
@@ -773,12 +774,6 @@ let g:yankring_window_use_separate = 1
 let g:yankring_window_height = 13
 let g:yankring_replace_n_pkey = ''
 let g:yankring_replace_n_nkey = ''
-
-
-"                       [ A ]
-
-let g:alternateExtensions_m = "h"
-let g:alternateExtensions_h = "m"
 
 
 "                     [ CtrlP ]
@@ -811,13 +806,13 @@ nnoremap <leader>ta :ALEToggle<CR>
 let g:ale_linters = {
     \'json': ['jsonlint'],
     \'javascript': ['eslint'],
-    \'typescript': ['tslint'],
+    \'typescript': ['eslint'],
     \'python': ['pycodestyle'],
     \}
 
 let g:ale_fixers = {
     \'javascript': ['eslint'],
-    \'typescript': ['tslint'],
+    \'typescript': ['eslint'],
     \'python': ['autopep8'],
     \}
 
