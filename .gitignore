@@ -1,5 +1,6 @@
 *.swp
 .DS_Store
+vim/pack
 vim/.netrwhist
 vim/local/yankring_history_v2.txt
 vim/local/mru_recent_files

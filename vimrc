@@ -3,20 +3,74 @@ scriptencoding utf-8 " Specify the character encoding used in the script
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                       Pathogen                           "
+"                       minpac                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype off
+function! PackInit() abort
+    packadd minpac
 
-" List of disabled plugins, prevent pathogen from self-sourcing
-let g:pathogen_disabled = [
-            \"pathogen",
-            \"snipmate",
-            \"archer",
-            \"syntax-javascript",
-            \"syntax-minitest"
-            \]
-call pathogen#infect()
+    call minpac#init()
+
+    " minpac must have {'type': 'opt'} so that it can be loaded with `packadd`
+    call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+    " Define plugins
+    call minpac#add('andymass/vim-matchup')
+    call minpac#add('avakarev/vim-watchdog')
+    call minpac#add('ervandew/supertab')
+    " call minpac#add('github/copilot.vim')
+    call minpac#add('jlanzarotta/bufexplorer')
+    " call minpac#add('kien/ctrlp.vim')
+    " call minpac#add('mileszs/ack.vim')
+    call minpac#add('scrooloose/nerdcommenter')
+    call minpac#add('scrooloose/nerdtree')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-surround')
+    " call minpac#add('vim-scripts/TaskList.vim')
+    call minpac#add('vim-scripts/YankRing.vim')
+    call minpac#add('w0rp/ale')
+    call minpac#add('yegappan/mru')
+
+    " Define colorschemes
+    " call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
+    " call minpac#add('chankaward/vim-railscasts-theme', {'type': 'opt'})
+    " call minpac#add('endel/vim-github-colorscheme', {'type': 'opt'})
+    " call minpac#add('goatslacker/mango.vim', {'type': 'opt'})
+    " call minpac#add('guns/jellyx.vim', {'type': 'opt'})
+    " call minpac#add('jnurmine/Zenburn', {'type': 'opt'})
+    " call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
+    " call minpac#add('kristiandupont/shades-of-teal', {'type': 'opt'})
+    " call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
+    " call minpac#add('sickill/vim-monokai', {'type': 'opt'})
+    " call minpac#add('twerth/ir_black', {'type': 'opt'})
+    call minpac#add('avakarev/xoria256.vim', {'type': 'opt'})
+    " call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
+
+    " Define syntax plugins
+    call minpac#add('Glench/Vim-Jinja2-Syntax')
+    call minpac#add('cakebaker/scss-syntax.vim')
+    call minpac#add('cespare/vim-toml')
+    call minpac#add('chr4/nginx.vim')
+    call minpac#add('ekalinin/Dockerfile.vim')
+    call minpac#add('fatih/vim-go')
+    call minpac#add('grafana/vim-alloy')
+    call minpac#add('hashivim/vim-terraform')
+    call minpac#add('leafOfTree/vim-vue-plugin')
+    call minpac#add('leafgarland/typescript-vim')
+    call minpac#add('mustache/vim-mustache-handlebars')
+    " call minpac#add('mxw/vim-jsx')
+    call minpac#add('othree/html5.vim')
+    call minpac#add('tpope/vim-git')
+    call minpac#add('tpope/vim-markdown')
+    call minpac#add('wting/rust.vim')
+endfunction
+
+" Define minpac commands
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+
+filetype off
 filetype plugin indent on
 
 
@@ -34,6 +88,7 @@ endif
 " To enable 256-color schemes, make sure that terminal supports 256 colors
 if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
     set t_Co=256          " Enable 256-color mode
+    packadd xoria256.vim
     colorscheme xoria256+ " Set nice 256-color scheme
 else
     colorscheme default
@@ -736,11 +791,6 @@ let g:ctrlp_custom_ignore = {
     \}
 
 
-"                     [ Dash ]
-
-nnoremap <leader>sd :Dash <cword><CR>
-
-
 "                     [ Ack ]
 
 if executable('ag')
@@ -774,11 +824,6 @@ let g:ale_fixers = {
 let g:ale_set_quickfix = 1
 
 
-"                     [ mix-format ]
-let g:mix_format_on_save = 1
-let g:mix_format_silent_errors = 1
-
-
 "                     [ vim-go ]
 let g:go_template_autocreate = 0
 
@@ -796,6 +841,6 @@ nnoremap <leader>tc :let g:copilot_enabled = !g:copilot_enabled<CR>:echo "Copilo
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
+" if filereadable(expand("~/.vimrc.local"))
     " source ~/.vimrc.local
-endif
+" endif
