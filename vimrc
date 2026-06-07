@@ -31,21 +31,6 @@ function! PackInit() abort
     call minpac#add('w0rp/ale')
     call minpac#add('yegappan/mru')
 
-    " Define colorschemes
-    " call minpac#add('altercation/vim-colors-solarized', {'type': 'opt'})
-    " call minpac#add('chankaward/vim-railscasts-theme', {'type': 'opt'})
-    " call minpac#add('endel/vim-github-colorscheme', {'type': 'opt'})
-    " call minpac#add('goatslacker/mango.vim', {'type': 'opt'})
-    " call minpac#add('guns/jellyx.vim', {'type': 'opt'})
-    " call minpac#add('jnurmine/Zenburn', {'type': 'opt'})
-    " call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
-    " call minpac#add('kristiandupont/shades-of-teal', {'type': 'opt'})
-    " call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
-    " call minpac#add('sickill/vim-monokai', {'type': 'opt'})
-    " call minpac#add('twerth/ir_black', {'type': 'opt'})
-    call minpac#add('avakarev/xoria256.vim', {'type': 'opt'})
-    " call minpac#add('w0ng/vim-hybrid', {'type': 'opt'})
-
     " Define syntax plugins
     call minpac#add('Glench/Vim-Jinja2-Syntax')
     call minpac#add('cakebaker/scss-syntax.vim')
@@ -63,6 +48,21 @@ function! PackInit() abort
     call minpac#add('tpope/vim-git')
     call minpac#add('tpope/vim-markdown')
     call minpac#add('wting/rust.vim')
+
+    " Define colorschemes
+    call minpac#add('https://codeberg.org/lifepillar/vim-solarized8.git', {'type': 'opt', 'name': 'solarized8'})
+    call minpac#add('avakarev/xoria256.vim', {'type': 'opt'})
+    call minpac#add('cocopon/iceberg.vim', {'type': 'opt'})
+    call minpac#add('drewtempelmeyer/palenight.vim', {'type': 'opt'})
+    call minpac#add('jnurmine/Zenburn', {'type': 'opt'})
+    call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
+    call minpac#add('joshdick/onedark.vim', {'type': 'opt'})
+    call minpac#add('junegunn/seoul256.vim', {'type': 'opt'})
+    call minpac#add('nanotech/jellybeans.vim', {'type': 'opt'})
+    call minpac#add('nordtheme/vim', {'type': 'opt', 'name': 'nord'})
+    call minpac#add('sainnhe/edge', {'type': 'opt'})
+    call minpac#add('sainnhe/gruvbox-material', {'type': 'opt'})
+    call minpac#add('sainnhe/sonokai', {'type': 'opt'})
 endfunction
 
 " Define minpac commands
