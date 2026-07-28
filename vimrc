@@ -613,6 +613,7 @@ augroup CustomFiletypes
     autocmd BufNewFile,BufRead *.{txt,todo} setlocal spell foldcolumn=0 tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead {.dotfilesrc} setlocal filetype=json
     autocmd BufNewFile,BufRead *.yaml.gotmpl setlocal filetype=yaml
+    autocmd BufNewFile,BufRead *.html.gotmpl set filetype=gohtmltmpl
     autocmd FileType markdown setlocal spell foldcolumn=0
     autocmd FileType make,automake setlocal noexpandtab softtabstop=0
     autocmd FileType scss,css,jade,html,html.handlebars,javascript,json,typescript,vue setlocal tabstop=2 softtabstop=2 shiftwidth=2
