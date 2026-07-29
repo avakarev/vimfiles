@@ -34,7 +34,6 @@ function! PackInit() abort
     " Define syntax plugins
     call minpac#add('Glench/Vim-Jinja2-Syntax')
     call minpac#add('cakebaker/scss-syntax.vim')
-    call minpac#add('cespare/vim-toml')
     call minpac#add('chr4/nginx.vim')
     call minpac#add('ekalinin/Dockerfile.vim')
     call minpac#add('fatih/vim-go')
