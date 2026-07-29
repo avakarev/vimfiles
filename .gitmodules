@@ -1,3 +1,0 @@
-[submodule "vim/fonts"]
-	path = vim/fonts
-	url = https://github.com/powerline/fonts.git

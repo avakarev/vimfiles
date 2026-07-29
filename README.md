@@ -2,7 +2,7 @@
 
 ## Installation
 
-Download plugins, colorschemes and fonts included as git submodules:
+Download minpac package manager and other deps as git submodules:
 
     make init
 
