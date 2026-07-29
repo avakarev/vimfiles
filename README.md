@@ -6,6 +6,10 @@ Download minpac package manager and other deps as git submodules:
 
     make init
 
-Make sym-links to home directory:
+Update minpac to latest version:
+
+    make update
+
+Make symlinks to home directory:
 
     make link

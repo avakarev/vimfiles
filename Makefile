@@ -18,5 +18,7 @@ clean:
 
 init:
 	git clone https://github.com/k-takata/minpac.git ./vim/pack/minpac/opt/minpac
-	git submodule update --init
 .PHONY: init
+
+update:
+	cd ./vim/pack/minpac/opt/minpac && git pull
