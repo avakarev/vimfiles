@@ -35,7 +35,6 @@ function! PackInit() abort
     call minpac#add('Glench/Vim-Jinja2-Syntax')
     call minpac#add('cakebaker/scss-syntax.vim')
     call minpac#add('chr4/nginx.vim')
-    call minpac#add('ekalinin/Dockerfile.vim')
     call minpac#add('fatih/vim-go')
     call minpac#add('grafana/vim-alloy')
     call minpac#add('hashivim/vim-terraform')
