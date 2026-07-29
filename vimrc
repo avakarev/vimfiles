@@ -41,7 +41,6 @@ function! PackInit() abort
     call minpac#add('leafOfTree/vim-vue-plugin')
     call minpac#add('leafgarland/typescript-vim')
     call minpac#add('mustache/vim-mustache-handlebars')
-    " call minpac#add('mxw/vim-jsx')
     call minpac#add('othree/html5.vim')
     call minpac#add('rust-lang/rust.vim')
     call minpac#add('tpope/vim-git')
