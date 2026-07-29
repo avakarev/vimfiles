@@ -81,11 +81,9 @@ if has("termguicolors")
     set termguicolors
 endif
 
-" To enable 256-color schemes, make sure that terminal supports 256 colors
-if &t_Co >= 256 || has("gui_running") || $TERM_PROGRAM == "iTerm.app" || $COLORTERM == "gnome-terminal"
-    set t_Co=256          " Enable 256-color mode
+if has("gui_running") || &t_Co >= 256
     packadd xoria256.vim
-    colorscheme xoria256+ " Set nice 256-color scheme
+    colorscheme xoria256+
 else
     colorscheme default
 endif
@@ -99,9 +97,9 @@ set scrolloff=3     " Minimal number of screen lines to keep above and below the
 set sidescroll=1    " Minimal number of columns to scroll horizontally
 set sidescrolloff=3 " Minimal number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set
 
-" Ctrl+j moves cursor 5 lines up
+" Ctrl+j moves cursor 5 lines down
 noremap <C-j> 5j
-" Ctrl+k moves cursor 5 lines down
+" Ctrl+k moves cursor 5 lines up
 noremap <C-k> 5k
 
 " Differs from 'j' and 'k' when lines wrap, because it's not linewise
@@ -116,19 +114,10 @@ if (&t_Co >= 256) || has("gui_running") || ($TERM_PROGRAM == "iTerm.app") || ($C
 endif
 
 " Make cursor shape as line in insert mode and as block in other cases
-if !has("gui_running") && has("linux") && has("autocmd")
-    " Should work in gnome-terminal >= 3.16
-    au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
-    au InsertEnter,InsertChange *
-        \ if v:insertmode == 'i' |
-        \   silent execute '!echo -ne "\e[6 q"' | redraw! |
-        \ elseif v:insertmode == 'r' |
-        \   silent execute '!echo -ne "\e[4 q"' | redraw! |
-        \ endif
-    au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-elseif $TERM =~ "xterm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if !has("gui_running")
+    let &t_SI = "\e[6 q"  " bar cursor in insert mode
+    let &t_SR = "\e[4 q"  " underline cursor in replace mode
+    let &t_EI = "\e[2 q"  " block cursor otherwise
 endif
 
 function! RestoreCurPrevPos()
@@ -147,7 +136,6 @@ autocmd BufReadPost * call RestoreCurPrevPos()
 
 set secure      " Disable shell scripts in ./.vimrc
 set nomodeline  " Disable setting vim mode from documents
-set modelines=0 " Disable vim modelines parser
 
 set encoding=utf-8 nobomb " BOM often causes trouble
 set fileencodings=utf-8,cp1251,koi8-r,cp866
@@ -282,9 +270,7 @@ endfunction
 "  spell
 nnoremap <leader>ts :set spell! <Bar> set spell?<CR>
 "  relative number
-if exists("&relativenumber")
-    nnoremap <leader>tr :set relativenumber!<Bar> set relativenumber?<CR>
-endif
+nnoremap <leader>tr :set relativenumber!<Bar> set relativenumber?<CR>
 "  highlighting of overlength
 nnoremap <leader>to :call ToggleOverLengthHi()<CR>
 function! ToggleOverLengthHi()
@@ -351,16 +337,15 @@ set showmatch   " Show matching parentheses
 set matchtime=3 " Duration to show matching brace (1/10 sec)
 
 set nowrap      " Do not wrap lines
-set linebreak " Do not break words
+set linebreak   " Do not break words
 if has("linebreak")
     " String to put at the beginning of lines that have been wrapped: ↪
     let &showbreak = nr2char(8618).' '
 endif
 
-set visualbell noerrorbells t_vb= " Turn off error beep/flash
+set belloff=all " Silence all bell events
 
 set lazyredraw " Screen will not be redrawn while executing macros
-set ttyfast    " Improves smoothness of redrawing
 
 set winminheight=0 " Minimal height of a window, when it's not the current window
 set cmdheight=1    " Number of screen lines to use for the command-line
