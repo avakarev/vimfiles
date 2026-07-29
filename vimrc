@@ -46,7 +46,6 @@ function! PackInit() abort
     call minpac#add('othree/html5.vim')
     call minpac#add('rust-lang/rust.vim')
     call minpac#add('tpope/vim-git')
-    call minpac#add('tpope/vim-markdown')
 
     " Define colorschemes
     call minpac#add('https://codeberg.org/lifepillar/vim-solarized8.git', {'type': 'opt', 'name': 'solarized8'})
