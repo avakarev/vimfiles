@@ -310,6 +310,13 @@ set undolevels=1000 " Set huge undo steps
 
 set nobackup nowritebackup noswapfile " Disable backups and swapfile
 
+" Persistent undo — survive undo history across sessions
+if has('persistent_undo')
+    set undofile
+    set undodir=~/.vim/local/undo
+    silent! call mkdir(&undodir, 'p')
+endif
+
 " For modern standards in :TOhtml output
 let html_use_css        = 1
 let use_xhtml           = 1
