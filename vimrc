@@ -472,6 +472,9 @@ set pumheight=8 " Keep a small completion window
 
 " Hitting TAB in command mode will show possible completions above command line
 set wildmenu
+if exists('+wildoptions') && (has('patch-8.2.4325') || has('nvim'))
+  set wildoptions+=pum " Use popup menu for command-line completion
+endif
 
 " A file that matches with one of these patterns is ignored when completing file or directory names
 set wildignore+=.hg,.git,.svn                  " Version control
