@@ -256,16 +256,26 @@ endfunction
 nnoremap <leader>tb :call ToggleEOLatEOF()<CR>
 function! ToggleEOLatEOF()
     " Disable/Enable EOL at EOF
+    augroup EOLatEOF
+        autocmd!
+    augroup END
     if exists('g:eol_at_eof_enabled') && g:eol_at_eof_enabled
         let g:eol_at_eof_enabled = 0
-        autocmd BufWritePre * setlocal nobinary eol
+        augroup EOLatEOF
+            autocmd!
+            autocmd BufWritePre * setlocal nobinary eol
+            autocmd BufWritePost * setlocal nobinary eol
+        augroup END
         echo "EOL at EOF turned OFF"
     else
         let g:eol_at_eof_enabled = 1
-        autocmd BufWritePre * setlocal binary noeol
+        augroup EOLatEOF
+            autocmd!
+            autocmd BufWritePre * setlocal binary noeol
+            autocmd BufWritePost * setlocal nobinary eol
+        augroup END
         echo "EOL at EOF turned ON"
     endif
-    autocmd BufWritePost * setlocal nobinary eol
 endfunction
 "  spell
 nnoremap <leader>ts :set spell! <Bar> set spell?<CR>
